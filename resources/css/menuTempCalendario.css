@@ -1,0 +1,73 @@
+/*
+Mediante CSS nos encargamos de darle un poco de forma, 
+primero ubicando cada elemento al lado del otro y no debajo del otro 
+como se ubican por defecto las listas. Al elemento individual le indicaremos 
+que debe tener position:relative, para que cuando una nueva lista parta del 
+elemento pueda posicionarse correctamente utilizando 
+position:absolute. 
+Al anchor le aplicamos text-transform:uppercase para colocar en mayúsculas 
+su texto, colocamos color de fondo y de tipografía. Luego definimos el 
+estado :hover, cambiando el color de fondo y de tipografía nuevamente 
+para resaltarlo.
+*/
+ul.menu {
+    float:left;
+    display:block;
+    margin-top: 38px;
+    list-style-type:none;
+    }
+    .menu li {
+    line-height:18px;
+    font-size:13px;
+    position:relative;
+    float:left;
+    }
+    .menu li a {
+    color: white;
+    background-color: navy;
+    text-transform:uppercase;
+    padding: 5px 20px;
+    text-decoration:none;
+    }
+    .menu li a:hover {
+    color: navy;
+    background-color: white;
+    }
+   /*
+   En el siguiente paso posicionamos la nueva lista que se abrirá como hija 
+   de un elemento <li>. Por defecto estará oculta (display:none) y con position
+    y top acomodamos la lista para que se despliegue hacia abajo. 
+   */
+   .menu li ul {
+    display:none;
+    position:absolute;
+    top:20px;
+    width: 240px;
+    background-color: navy;
+    color:white;
+    padding:0;
+    list-style-type:none;
+    }
+   /*
+   Estilizamos un poco los elementos li hijos de esta nueva lista.
+   */
+   .menu li ul li {
+    width: 200px;
+    border: 1px solid white;
+    border-top:none;
+    padding: 10px 20px;
+    }
+    .menu li ul li:first-child {
+    border-top: 1px solid white;
+    }
+   .menu li ul li a {
+    width: 240px;
+    margin: 0;
+    padding:0;
+    }
+   .menu li ul li a:hover {
+    width: 240px;
+    margin: 0;
+    color: navy;
+    background-color: white;
+    }
