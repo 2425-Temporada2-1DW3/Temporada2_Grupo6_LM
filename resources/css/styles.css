@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Protest+Strike&display=swap');
+
+:root{ /*codigo que se ejecuta siempre*/
+       /*Variables de color predefinidas*/
+    --main_col_10:#3E0223;
+    --main_col_9: #510621;
+    --main_col_8: #740A1E;
+    --main_col_7: #970E1C;
+    --main_col_6: #BA1219;
+    --main_col_5: #DD1616;
+    --main_col_4: #E64849;
+    --main_col_3: #EE797B;
+    --main_col_2: #F7ABAE;
+    --main_col_1: #FFDCE0;
+    --main_col_0: #fff2f4;
+    --text_col:#27021f;
+
+       /*Configuracion Del Texto Predefinido*/
+	color:var(--text_col); 
+    font-family: "Montserrat", sans-serif; 
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+body{background-color: rgb(255, 255, 255);}
+
+
+/*
+    ██   ██ ███████  █████  ██████  ███████ ██████  
+    ██   ██ ██      ██   ██ ██   ██ ██      ██   ██ 
+    ███████ █████   ███████ ██   ██ █████   ██████  
+    ██   ██ ██      ██   ██ ██   ██ ██      ██   ██ 
+    ██   ██ ███████ ██   ██ ██████  ███████ ██   ██ 
+*/
+
+.headerGrid{
+    display: grid;                                          /* Definir grid */
+    background-color: var(--main_col_5);                    /* Definir color de fondo */
+    grid-template-columns: 0.5fr 2fr 2fr;                   /* Definir Cuanto espacio Cogen cada DIV */
+    padding: 1%;                                            /* Padding Para que no se pegen las cosas a la esquina */
+    text-transform: uppercase;                              /* Hace que el texto sea todo en Mayus*/
+}
+                                                            /*-- IMAGEN DEL LOGO --*/
+.hg1 {grid-row: 1 / 3; grid-row-start: 1; grid-row-end: 3;} /*Config del Grid*/
+.hg1 img {min-width: 7.5em; width: 8em;}                    /*Tamaño de imagen y tamaño minimo para responsive*/
+                                                   
+.hg2 {                                                      /*-- TITULO RFEBM --*/
+    grid-column-start: 2; grid-column-end: 4; grid-row: 1;  /* Config Grid */
+    text-align: center;                                     /* Alinea texto al centro */
+    font-family: "Protest Strike", sans-serif;              /* define que fuente se usa */
+    line-height: 2em;                                       /* Quita espaciado en blanco del texto */
+    color: var(--main_col_9);                               /* Color de la fuente */
+    font-size: 2em;                                         /* Tamaño de la fuente */
+}
+
+.hg2 a, .hg2 a:link, .hg2 a:visited, .hg2 a:active {
+    text-decoration: none;                                  /* Quita subrayado del texto */
+    transition: all 0.25s ease;                             /* Hace una transicion para cuando se haga hover en el texto */
+    color: var(--main_col_9);
+}
+
+.hg2 a:hover {
+    color: var(--main_col_8);                               /* Cambia el color del texto cuando haces hover */
+}
+
+/*
+    ██████   █████  ██████  ██████   █████      ███    ██  █████  ██    ██ 
+    ██   ██ ██   ██ ██   ██ ██   ██ ██   ██     ████   ██ ██   ██ ██    ██ 
+    ██████  ███████ ██████  ██████  ███████     ██ ██  ██ ███████ ██    ██ 
+    ██   ██ ██   ██ ██   ██ ██   ██ ██   ██     ██  ██ ██ ██   ██  ██  ██  
+    ██████  ██   ██ ██   ██ ██   ██ ██   ██     ██   ████ ██   ██   ████     
+*/
+
+.hg3{
+    grid-column-start: 2; grid-column-end: 4; grid-row: 2;        /* Config grid */
+    text-align: center;                                           /* Alineacion de texto centrada */
+} 
+nav ul {
+    list-style-type: none;                                        /* Que no salgan los puntos de la lista */
+    margin:0%;                                                    /* Quitar margen por defecto */
+    float: right;                                                 /* Que se aline a la derecha*/
+    width: 100%;                                                  /* Ajustar Tamaño */
+}
+nav ul li {                                                       /* -- CONFIG BOTONES -- */
+    background-color:var(--main_col_2);                           /* Color de boton */
+    transition: all 0.25s ease;                                   /* Hace una transicion para cuando se haga hover en el botón */
+    padding:0.6em;                                                /* Añade un espaciado del texto al boton */
+    border-radius: 0.6em;                                         /* Redondea los bordes del boton */
+    color:var(--text_col);                                        /* Para que el link no sea azul*/
+}
+nav ul a {                                                        /* -- TEXTO DE BOTON -- */
+    text-decoration: none;                                        /*Quita la linea de debajo que los links suelen tener*/
+    margin: 0% 1.5% 0% 1.5%;                                      /* Añade margen lateral a los botones */
+    display: inline-block;                                        /* Define que cada boton sea un bloque en linea */
+
+}
+nav ul li:hover{background-color:var(--main_col_3); scale: 110%;} /* Cambia el color a mas oscuro y escala el texto por 1.1 */
+nav ul li a:hover, nav ul li a:visited {color:var(--text_col);}   /*Evitar Que cambie el color de texto cuando hagas hover y quando hayas visitado la pagina*/
+
+/*
+     ██████  ██████  ███    ██ ████████ ███████ ███    ██ ██ ██████   ██████  
+    ██      ██    ██ ████   ██    ██    ██      ████   ██ ██ ██   ██ ██    ██ 
+    ██      ██    ██ ██ ██  ██    ██    █████   ██ ██  ██ ██ ██   ██ ██    ██ 
+    ██      ██    ██ ██  ██ ██    ██    ██      ██  ██ ██ ██ ██   ██ ██    ██ 
+     ██████  ██████  ██   ████    ██    ███████ ██   ████ ██ ██████   ██████                                                                      
+*/
+
+.mainImage {width: 100%;}                       /* Permite que la imagen se reescale con el tamaño de la pagina */
+.mainText{margin: 1.2em 3.6em 1.2em 3.6em;font-size: 1.2em;text-align: justify;} /* Margenes genericos para el texto dentro de el contenido principal*/
+
+.titleDefault {                                 /*Esta clase se usa para los separadores de contenido*/
+    padding: 0.1em;                             /* Padding */
+    padding-left: 0.8em;
+    font-size: 2em;                             /* Tamaño de la fuente*/
+    text-transform: uppercase;                  /* Que la fuente este en mayusculas*/
+    border: 0.1em solid var(--main_col_6);      /*Borde arriba y abajo*/
+    border-left: 0; border-right: 0;            /* Quitar los bordes en la dcha y izq*/
+    font-family: "Protest Strike", sans-serif;  /* Fuente usada */
+    color:var(--main_col_6);                    /* Color de la fuente */
+    background-color: var(--main_col_1);        /* Color dentro de los bordes*/
+}
+article{margin: 4% 0% 4% 0%;}                   /* Márgenes genéricos para el texto dentro de el contenido principal*/
+article h2{ 
+    writing-mode: vertical-rl;                  /* Tipo de escritura para que funcione el texto en vertical*/
+    text-orientation: upright;                  /* Selecciona el texto en vertical */
+    text-transform: uppercase;                  /* Hace que el texto Se ponga en MAYUSCULAS*/
+    text-align: center;                         /* Centra el texto */
+    margin:0;                                   /* Quita margenes de texto por defecto */
+    padding: 0 1.2em 0 1.2em;                   /* Padding arriba y abajo porque no hay manera de centrar en vertical*/
+    font-size: 1.8em;                             /* Tamaño de fuente */
+    color: var(--main_col_9);                   /* Color de Fuente */
+    background-color: var(--main_col_5);        /* Color del bloque */
+}
+
+.textoAudio {
+    text-align: center;
+    color: #BA1219;
+}
+.audio {
+    text-align: center;
+    margin: 0.4em 0em 0.4em 0em;
+}
+
+.video video {
+    width: 50%;
+    margin: 2em 25% 2em 25%;
+}
+
+/*
+    ███████  ██████   ██████  ████████ ███████ ██████  
+    ██      ██    ██ ██    ██    ██    ██      ██   ██ 
+    █████   ██    ██ ██    ██    ██    █████   ██████  
+    ██      ██    ██ ██    ██    ██    ██      ██   ██ 
+    ██       ██████   ██████     ██    ███████ ██   ██ 
+*/
+
+footer{
+    background-color: var(--main_col_5);                              /* Color de fondo */
+    display: grid;                                                    /* Que use grid */
+    grid-template-columns: 1.27fr 1fr auto ;                          /* 3 Columnas de grid */
+}
+footer img {
+    width: 63%;
+}
+.footericons{width: 5%; display: flex;}                               /*Para que los iconos se ajusten bien*/
+.footericons div {font-size: 2.3em; padding-right: 50%;}              /* tamaño y padding de los iconos*/
+.footericons a:link, a:visited, a:active { color: var(--main_col_9);} /*que los botones de redes sociales no cambien de color en todos los otros casos*/
+.footericons a:hover { color: var(--main_col_2);transition: 0.3s;}    /*que los botones de redes sociales cambien de color solo en hover*/
+.footerinf{text-align: right; padding: 1em;}                          /* Para que la inf contacto se ajuste a la derecha y padding */
+.footersocialtext{font-size: 1.5em;padding: 1em 0 0.5em 0;}           /*Tamaño de la fuente de la inf contacto*/
+
+
+/*
+    ██████   █████   ██████      ██████  ██████  ██ ███    ██  ██████ ██ ██████   █████  ██      
+    ██   ██ ██   ██ ██           ██   ██ ██   ██ ██ ████   ██ ██      ██ ██   ██ ██   ██ ██      
+    ██████  ███████ ██   ███     ██████  ██████  ██ ██ ██  ██ ██      ██ ██████  ███████ ██      
+    ██      ██   ██ ██    ██     ██      ██   ██ ██ ██  ██ ██ ██      ██ ██      ██   ██ ██      
+    ██      ██   ██  ██████      ██      ██   ██ ██ ██   ████  ██████ ██ ██      ██   ██ ███████ 
+*/
+
+                                                                       /* -- SECCION NOTICIAS -- */
+.mainNews h2{grid-row: 1 / 3;}                                         /* Config Grid */
+.mainNews img{width: 100%;}                                            /*Para que se adapte al tamaño del grid*/
+.mainNews {
+    display: grid;                                                     /* Que use grid */
+    grid-template-columns: auto auto auto auto;                        /* Config Grid 4 columnas */
+}
+
+                                                                       /* -- SECCION PARTIDOS -- */
+.mainMatches {
+    background-color: var(--main_col_1);                               /* Color de fondo de la seccion */
+    display: grid;                                                     /* Que use grid */
+    grid-template-columns: 0.1fr 0.3fr 0.1fr 0.3fr 0.1fr 0.2fr 0.1fr;  /* Config Grid 7 columnas */
+}
+.mainMatches h2{grid-row: 1 / 7; grid-column: 7;}                      /* Config Grid */
+.mainMatches img{width: 80%; padding: 15%;}                            /* Para que se adapte al tamaño del grid y deje un poco de espacio en blanco */
+.mainMatches div {font-size: 1.5em; text-align: center; margin: auto;} /* Para centrar el texto y el tamaño de texto */
+
+                                                                       /* -- SECCION SPONSORS -- */
+.mainSponsors {
+    display: grid;                                                     /* Que use grid */
+    background-color: var(--main_col_1);                               /* Color de fondo de la seccion */
+    grid-template-columns: auto auto auto auto auto ;                  /* Config Grid 5 columnas */
+}
+.mainSponsors h2 {grid-row: 1 / 5;}                                    /* Config Grid */
+.mainSponsors img {width: 80%; padding: 5% 0% 5% 10%; }                /* Ajusta Tamaño de las imagenes de sponsors */
+
+/*
+     ██████  ██████  ███    ██ ████████  █████   ██████ ████████  ██████  
+    ██      ██    ██ ████   ██    ██    ██   ██ ██         ██    ██    ██ 
+    ██      ██    ██ ██ ██  ██    ██    ███████ ██         ██    ██    ██ 
+    ██      ██    ██ ██  ██ ██    ██    ██   ██ ██         ██    ██    ██ 
+     ██████  ██████  ██   ████    ██    ██   ██  ██████    ██     ██████
+*/
+
+.socialnetworks{
+    display: grid;                                 /* Que use grid */
+    grid-template-columns:max-content max-content; /* Configuracion De Grid de dos columnas para los iconos y @ de redes sociales*/
+    font-size: 1.45em;                             /* Tamaño de fuente y Iconos */
+    margin: 2% 6% 2% 6%;                           /* Padding General*/
+}
+.socialnetworks div {padding: 0.6em 0.6em 0 0;}    /* Padding entre texto y logos*/
+.socialnetworks a {color: var(--main_col_9);}      /* Color de texto y logos*/
+.mainText iframe{
+    border-radius: 0.2em;                          /* Redondea los bordes del iframe */
+    border: 2px solid #ccc                       /* Añade un borde al iframe */
+}
+.mainText form{
+    max-width: 500px;                              /* Tamaño maximo del formulario */
+    margin: auto;                                  /* Centra el formulario */
+    padding: 20px;                                 /* Padding del formulario */
+    border-radius: 8px;                            /* Redondea los bordes del formulario */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);   /* Añade una sombra al formulario */
+    background-color: #f2f2f2;                   /* Color de fondo del formulario */
+}
+.mainText label{
+    display: block;                                /* Que se muestre en bloque */
+    margin: 0.5em 0em;                             /* Margen entre elementos */
+}
+.mainText input[type="text"], .mainText input[type="email"], .mainText input[type="tel"], .mainText textarea {
+    width: 100%;                                   /* Que ocupe todo el ancho */
+    padding: 0.5em;                                /* Padding */
+    border-radius: 4px;                            /* Redondea los bordes */
+    border: 1px solid #ccc;                      /* Añade un borde */
+    box-sizing: border-box;                        /* Que el tamaño del input incluya el borde */
+    margin-bottom: 15px;                           /* Margen abajo */
+    transition: border-color 0.3s;                 /* Transicion de color de borde */
+}
+.mainText input:focus, textarea:focus {
+    border-color: var(--main_col_6);               /* Cambia el color del borde cuando se hace focus */
+    outline: none;                                 /* Quita el borde azul que aparece por defecto */
+}
+.mainText button {
+    background-color: var(--main_col_6);           /* Color de fondo */
+    color: white;                                /* Color de texto */
+    padding: 0.5em 1em;                            /* Padding */
+    border: none;                                  /* Quita el borde */
+    border-radius: 4px;                            /* Redondea los bordes */
+    cursor: pointer;                               /* Cambia el cursor */
+    width: 100%;                                   /* Que ocupe todo el ancho */
+    transition: background-color 0.3s;             /* Transicion de color de fondo */
+}
+.mainText button:hover {
+    background-color: var(--main_col_7);           /* Cambia el color de fondo cuando se hace hover */
+}
+.container{display: flex;}                         /* Que use flex */
+.info{flex: 1;padding: 1.2em;}                     /* Configuracion de flex */
+.map{margin-top: 1.2em;}                           /* Margen arriba */
+.form-container{flex: 1;padding: 1.2em}             /* Configuracion de flex */
+
+/*
+     ██████  █████  ██      ███████ ███    ██ ██████   █████  ██████  ██  ██████  
+    ██      ██   ██ ██      ██      ████   ██ ██   ██ ██   ██ ██   ██ ██ ██    ██ 
+    ██      ███████ ██      █████   ██ ██  ██ ██   ██ ███████ ██████  ██ ██    ██2
+    ██      ██   ██ ██      ██      ██  ██ ██ ██   ██ ██   ██ ██   ██ ██ ██    ██ 
+     ██████ ██   ██ ███████ ███████ ██   ████ ██████  ██   ██ ██   ██ ██  ██████  
+*/
+
+.calendar img{width: 2.2em; margin: 0.2em 0.5em;vertical-align: middle;}                    /*Tamaño y margenes de las fotos de los equipos*/
+.calendar {
+    display: grid;  /* Que use grid */
+    grid-template-columns: 10em 35em 3em 7em 5em 7em 3em 15em;                 /* Configuracion y espacio que ocupa el grid*/
+    margin: 0.5em 0;                                             /* Margenes entre filas */
+}
+.calendarDateText { text-align: center; margin: auto;}                   /* Alinea el centro y pone margenes*/
+.calendarFieldText,.calendarTextTeam1,.calendarTextTeam2{ margin: auto;} /* Pone margenes*/
+.calendarTeam1 , .calendarTeam2{
+    display: grid;                                                       /* Que use grid */
+    grid-template-columns: auto;                                   /* Configura grid de 2 columnas para Logo Y texto */
+    margin: 0.2em 0em;                                         /* Padding arriba y abajo*/
+}
+.calendarTeam1 {justify-content: right;}                                 /* Alinea el texto a la derecha*/
+.calendarTeam2 {justify-content: left;}                                  /* Alinea el texto a la izquierda*/
+
+.calendarVersusText, .calendarHourText{
+    text-align: center;                                                  /* Alinea el texto a la derecha*/
+    margin: auto;                                                        /* Pone márgenes*/
+}
+
+/*
+     ██████   █████  ██      ███████ ██████  ██  █████  
+    ██       ██   ██ ██      ██      ██   ██ ██ ██   ██ 
+    ██   ███ ███████ ██      █████   ██████  ██ ███████ 
+    ██    ██ ██   ██ ██      ██      ██   ██ ██ ██   ██ 
+     ██████  ██   ██ ███████ ███████ ██   ██ ██ ██   ██ 
+*/
+.match{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    font-size: 1.5em;
+    justify-content: left;
+    border: 0.2em solid var(--main_col_5);
+    border-left: none;
+    border-right: none;
+    background-color: var(--main_col_1);
+}
+.match img {width: 2.4em; padding: 0em 0.5em 0em 0.5em;vertical-align: middle;margin: 0.2em 0;}
+.calendarVersusTextgal{margin: auto; padding: 0em 1em 0em 1em;}
+.mainGal h2{grid-row: 1 / 3;} /* Config Grid */
+.mainGal img{width: 100%;} /*Para que se adapte al tamaño del grid*/
+.mainGal {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto; /* Config Grid 4 columnas */
+    padding-bottom: 3em;
+}
+.mainGal h2{ 
+    /* Para que se ponga el texto en vertical y se alinee al centro */
+    writing-mode: vertical-rl; 
+    text-orientation: upright;
+    text-transform: uppercase; 
+    text-align: center;
+    margin:0;
+    padding: 0 1.2em 0 1.2em;
+    font-size: 2em;
+    color: var(--main_col_9);
+    background-color: var(--main_col_5);
+}
+/*
+███████  ██████  ██    ██ ██ ██████   ██████  ███████ 
+██      ██    ██ ██    ██ ██ ██   ██ ██    ██ ██      
+█████   ██    ██ ██    ██ ██ ██████  ██    ██ ███████ 
+██      ██ ▄▄ ██ ██    ██ ██ ██      ██    ██      ██ 
+███████  ██████   ██████  ██ ██       ██████  ███████ 
+            ▀▀                                        
+*/
+
+.equipos img{width: 4em ; margin: 2.5em 3em 2.5em 0em;} 
+.equipos{
+    display: grid;
+    grid-template-columns: auto auto ;
+}
+
+
+/*
+ ██████ ██       █████  ███████ ██ ███████ ██  ██████  █████   ██████ ██  ██████  ███    ██ 
+██      ██      ██   ██ ██      ██ ██      ██ ██      ██   ██ ██      ██ ██    ██ ████   ██ 
+██      ██      ███████ ███████ ██ █████   ██ ██      ███████ ██      ██ ██    ██ ██ ██  ██ 
+██      ██      ██   ██      ██ ██ ██      ██ ██      ██   ██ ██      ██ ██    ██ ██  ██ ██ 
+ ██████ ███████ ██   ██ ███████ ██ ██      ██  ██████ ██   ██  ██████ ██  ██████  ██   ████    
+*/
+.tabla table, th, td{
+    border-collapse: collapse;
+    border: 0.1em solid;
+    border-color: var(--main_col_2);
+    color: var(--main_col_9);
+}
+.tablaColOscuro{
+    background-color: var(--main_col_6);
+    color:var(--main_col_1);
+    padding: 0.5em 0;
+}
+.tabla img{
+    width: 2.5em;
+    vertical-align: middle;
+    padding: 0.1em;
+}
+.tabla td, th{
+    width: 1.5em;
+    text-align: center;
+}
+.tabla table{
+    width: 80%;
+    margin: 4% 10% 4% 10%;
+}
+

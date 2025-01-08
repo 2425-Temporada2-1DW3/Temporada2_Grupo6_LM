@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Idioma por defecto "es" (Español) -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0"> <!-- Tamaño de la pagina web por defecto-->
+    <title>RFEBM</title> <!-- Titulo en la pestaña -->
+    <link rel="stylesheet" href="resources/css/styles.css"> <!-- CSS Principal -->
+    <link rel="stylesheet" href="resources/css/responsive.css"> <!-- CSS Para El Responsive -->
+    <link rel="shortcut icon" href="resources/images/favicon.png" type="image/x-icon"><!-- imagen de icono en la pestaña -->
+    <link rel="stylesheet" href="resources/css/normalize.css"> <!-- Este CSS Estandariza el CSS para que funcione bien en todos los buscadores -->
+    <script src="https://kit.fontawesome.com/77e72bf4fc.js" crossorigin="anonymous"></script>
+    <script>
+        function formulario(event) {
+            event.preventDefault();
+            alert("Hemos recibido el mensaje. Nos pondremos en contacto lo antes posible.");
+            location.href = "contacto.html";
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="headerGrid">
+            <div class="hg1"> <a href="index.html"><img src="resources/images/logo.svg" alt="Main Site Logo"></a></div>
+            <div class="hg2"><a href="index.html" class="bigtitle">real federación española de balonmano</a><a href="index.html" class="smalltitle">rfebm</a></div>
+            <div class="hg3">                
+                <nav>
+                    <ul> <!--Barra Principal-->
+                        <a href="calendar.html"><li>  calendario    </li> </a>
+                        <a href="equipos.html"> <li>  equipos       </li> </a>
+                        <a href="clasificacion.html">  <li>  clasificación </li> </a>
+                        <a href="galeria.html"> <li>  galería       </li> </a>
+                        <a href="contacto.html"><li>  contacto      </li> </a>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>     
+    </header>
+    <main>
+    <img class="mainImage" src="resources/images/mainImage.png" alt="imagen de decoracion">
+
+    <div class="titleDefault">contacto</div>
+
+    <div class="mainText">
+        <div class="container">
+            <div class="info">
+                <dl>
+                    <dt>
+                        Correo:
+                        <dd>rfebm@gobespana.gov</dd>
+                    </dt>
+                    <dt>
+                        Teléfono:
+                        <dd>+34 673 474 484</dd>
+                        <dd>+34 911 098 096</dd>
+                    </dt>
+                    <dt>
+                        Dirección:
+                        <dd>Avenida de Mikel 9, Madrid, España, CP 28037</dd>
+                    </dt>
+                </dl>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d310.1677212081749!2d-3.7155745297817613!3d40.42446261061217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42286fb29eb07d%3A0x42b285e7b1eb1cca!2sReal%20Federaci%C3%B3n%20Espa%C3%B1ola%20de%20Balonmano%20(RFEBM)!5e0!3m2!1ses!2ses!4v1730794218061!5m2!1ses!2ses" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <form action="" method="post" onsubmit="formulario(event)">
+                    <h2>Formulario de Contacto</h2>
+                    
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="example@example.org" required pattern="^[^@\s]+@[^@\s]+\.[^@\s]{2,}$">
+                    
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="612345678" required pattern="^\d{9}$" maxlength="9">
+                    
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="titleDefault">Redes Sociales</div>
+    <div class="mainText">
+        En caso de no querer utilizar la información de contacto proporcionada en la sección de arriba,
+        tenemos diferentes redes sociales en las que aparte de subir contenido, podéis contactarnos.
+    
+    </div>
+        <div class="socialnetworks">
+                <div> <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a> </div> 
+                <div>@rfebalonmano</div>
+                <div> <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></div>
+                <div> @RFEBalonmano</div>
+                <div> <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a> </div>
+                <div>Real Federación Española <br> de Balonmano</div>
+                <div> <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a> </div>
+                <div>Real Federación Española <br> de Balonmano</div>
+        </div>
+
+
+    <footer>
+        <img src="resources/images/gobespana.png" alt="Comprobante gobierno español">
+        <div>
+            <div class="footersocialtext"> Redes Sociales</div>
+                <div class=footericons>
+                    <div> <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></div>
+                    <div> <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></div>
+                    <div> <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></div>
+                    <div> <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+                </div>
+            </div>
+        <div class="footerinf">
+            INFORMACIÓN DE CONTACTO <br> rfebm@gobespana.gov <br>+34 673 47 44 84 <br>Avenida de Mikel 9, Madrid, España
+        </div>
+
+    </footer>
+</body>
+</html>
