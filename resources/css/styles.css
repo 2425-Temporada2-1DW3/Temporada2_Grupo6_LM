@@ -95,8 +95,6 @@ nav ul a {                                                        /* -- TEXTO DE
     display: inline-block;                                        /* Define que cada boton sea un bloque en linea */
 
 }
-nav ul li:hover{background-color:var(--main_col_3); scale: 110%;} /* Cambia el color a mas oscuro y escala el texto por 1.1 */
-nav ul li a:hover, nav ul li a:visited {color:var(--text_col);}   /*Evitar Que cambie el color de texto cuando hagas hover y quando hayas visitado la pagina*/
 
 /*
      ██████  ██████  ███    ██ ████████ ███████ ███    ██ ██ ██████   ██████  
