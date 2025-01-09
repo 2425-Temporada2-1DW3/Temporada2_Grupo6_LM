@@ -1,5 +1,5 @@
 /* Estilo general para el menú */
-.menu-desplegable {
+nav ul li .menu-desplegable {
     display: none;
     position: absolute;
     top: 100%;
@@ -11,7 +11,7 @@
 }
 
 /* Estilo para los elementos del menú desplegable */
-.menu-desplegable a {
+nav ul li .menu-desplegable a {
     display: block;
     padding: 10px 15px;
     text-decoration: none;
@@ -20,7 +20,7 @@
     white-space: nowrap;
 }
 
-.menu-desplegable a:hover {
+nav ul li .menu-desplegable a:hover {
     background-color: #f0f0f0;
     color: #000;
 }
