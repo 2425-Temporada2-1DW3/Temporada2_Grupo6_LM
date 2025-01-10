@@ -1,0 +1,36 @@
+/* Estilo general para el menú */
+nav ul li .menu-desplegable {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Estilo para los elementos del menú desplegable */
+nav ul li .menu-desplegable a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+nav ul li .menu-desplegable a:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Mostrar el menú desplegable al pasar el ratón por encima */
+nav li:hover .menu-desplegable {
+    display: block;
+}
+
+/* Asegurarse de que el menú aparezca debajo del botón */
+nav li {
+    position: relative;
+}
