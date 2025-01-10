@@ -75,6 +75,7 @@ body{background-color: rgb(255, 255, 255);}
 .hg3{
     grid-column-start: 2; grid-column-end: 4; grid-row: 2;        /* Config grid */
     text-align: center;                                           /* Alineacion de texto centrada */
+    width: 90%;
 } 
 nav ul {
     list-style-type: none;                                        /* Que no salgan los puntos de la lista */

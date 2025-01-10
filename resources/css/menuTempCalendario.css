@@ -1,3 +1,10 @@
+.headerGrid {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    justify-items: start;
+}
+/*________________________________________________________*/
 /* Estilo general para el menú */
 nav ul li .menu-desplegable {
     display: none;
@@ -33,4 +40,9 @@ nav li:hover .menu-desplegable {
 /* Asegurarse de que el menú aparezca debajo del botón */
 nav li {
     position: relative;
+}
+
+nav ul li .calendario {
+    padding-left: 20em;
+    color: green;
 }

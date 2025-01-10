@@ -58,7 +58,7 @@
                     <xsl:value-of select="fecha"/>
                 </div>
                 <div class="calendarFieldText">
-                    <xsl:value-of select="campo"/>
+                    <xsl:value-of select="estadio"/>
                 </div>
                 <a href="equipos.html#{equipo1}">
                     <img src="resources/images/logosEquipos/{equipo1}.png" alt="Logo Equipo 1"/>

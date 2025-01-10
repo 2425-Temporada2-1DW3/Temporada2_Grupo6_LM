@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Calendario.xsl"?>
+
 <calendario>
-    <mes nombre="febrero">
+    <mes nombreMes="febrero">
         <partido fecha="JUE. 01 FEB." estadio="Polideportivo MAP">
             <equipo1>Barcelona</equipo1>
             <equipo2>Cáceres</equipo2>
@@ -18,7 +20,7 @@
         </partido>
     </mes>
 
-    <mes nombre="marzo">
+    <mes nombreMes="marzo">
         <partido fecha="LUN. 04 MAR." estadio="Polideportivo Ríos">
             <equipo1>Cáceres</equipo1>
             <equipo2>Madrid</equipo2>
@@ -36,7 +38,7 @@
         </partido>
     </mes>
 
-    <mes nombre="abril">
+    <mes nombreMes="abril">
         <partido fecha="MAR. 02 ABR." estadio="Polideportivo MAP">
             <equipo1>Murcia</equipo1>
             <equipo2>Madrid</equipo2>
@@ -54,7 +56,7 @@
         </partido>
     </mes>
 
-    <mes nombre="mayo">
+    <mes nombreMes="mayo">
         <partido fecha="LUN. 06 MAY." estadio="Polideportivo Ríos">
             <equipo1>Bilbao</equipo1>
             <equipo2>Sevilla</equipo2>
@@ -72,7 +74,7 @@
         </partido>
     </mes>
 
-    <mes nombre="junio">
+    <mes nombreMes="junio">
         <partido fecha="JUE. 06 JUN." estadio="Polideportivo MAP">
             <equipo1>Sevilla</equipo1>
             <equipo2>Cáceres</equipo2>
@@ -90,7 +92,7 @@
         </partido>
     </mes>
 
-    <mes nombre="julio">
+    <mes nombreMes="julio">
         <partido fecha="VIE. 05 JUL." estadio="Polideportivo Ríos">
             <equipo1>Cáceres</equipo1>
             <equipo2>Sevilla</equipo2>
@@ -108,7 +110,7 @@
         </partido>
     </mes>
 
-    <mes nombre="agosto">
+    <mes nombreMes="agosto">
         <partido fecha="JUE. 02 AGO." estadio="Polideportivo MAP">
             <equipo1>Bilbao</equipo1>
             <equipo2>Madrid</equipo2>
@@ -126,7 +128,7 @@
         </partido>
     </mes>
 
-    <mes nombre="septiembre">
+    <mes nombreMes="septiembre">
         <partido fecha="LUN. 01 SEP." estadio="Polideportivo Ríos">
             <equipo1>Barcelona</equipo1>
             <equipo2>Sevilla</equipo2>
@@ -144,7 +146,7 @@
         </partido>
     </mes>
 
-    <mes nombre="octubre">
+    <mes nombreMes="octubre">
         <partido fecha="LUN. 05 OCT." estadio="Polideportivo MAP">
             <equipo1>Sevilla</equipo1>
             <equipo2>Bilbao</equipo2>
@@ -162,7 +164,7 @@
         </partido>
     </mes>
 
-    <mes nombre="noviembre">
+    <mes nombreMes="noviembre">
         <partido fecha="LUN. 05 NOV." estadio="Polideportivo MAP">
             <equipo1>Bilbao</equipo1>
             <equipo2>Cáceres</equipo2>
