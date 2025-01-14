@@ -88,7 +88,8 @@ nav ul li {                                                       /* -- CONFIG B
     transition: all 0.25s ease;                                   /* Hace una transicion para cuando se haga hover en el botón */
     padding:0.6em;                                                /* Añade un espaciado del texto al boton */
     border-radius: 0.6em;                                         /* Redondea los bordes del boton */
-    color:var(--text_col);                                        /* Para que el link no sea azul*/
+    color:var(--text_col);      
+    display: inline-block;                                  /* Para que el link no sea azul*/
 }
 nav ul a {                                                        /* -- TEXTO DE BOTON -- */
     text-decoration: none;                                        /*Quita la linea de debajo que los links suelen tener*/
