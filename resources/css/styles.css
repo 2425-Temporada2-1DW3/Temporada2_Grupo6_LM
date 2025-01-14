@@ -85,6 +85,9 @@ nav ul li .menu-desplegable a {
     font-size: 14px;
     white-space: nowrap;
 }
+nav ul li a {
+    color: black;
+}
 
 nav ul li .menu-desplegable a:hover {
     background-color: #f0f0f0;
