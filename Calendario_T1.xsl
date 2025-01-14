@@ -30,10 +30,10 @@
                                             <a href="calendar_T3.html">temporada 3</a>
                                         </div>
                                     </li>
-                                    <a href="equipos.html"> <li>  equipos       </li> </a>
-                                    <a href="clasificacion.html">  <li>  clasificación </li> </a>
-                                    <a href="galeria.html"> <li>  galería       </li> </a>
-                                    <a href="contacto.html"><li>  contacto      </li> </a>
+                                    <a class="headerposicion" href="equipos.html"> <li>  equipos       </li> </a>
+                                    <a class="headerposicion" href="clasificacion_T1.html">  <li>  clasificación </li> </a>
+                                    <a class="headerposicion" href="galeria.html"> <li>  galería       </li> </a>
+                                    <a class="headerposicion" href="contacto.html"><li>  contacto      </li> </a>
                                 </ul>
                             </nav>
                         </div>

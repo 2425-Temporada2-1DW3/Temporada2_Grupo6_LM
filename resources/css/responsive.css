@@ -9,15 +9,10 @@
   que sera mostrado cuando la pantalla sea menor que 973px,
   ese codigo esta en la parte del RESPONSIVE */
 
-  @media only screen and (min-width: 1367px) and (max-width: 2159px) { /* Cuando La pantalla es de 1367px a 2159px */
 
-  } 
-  @media only screen and (min-width: 973px) and (max-width: 1366px) {  /* Cuando La pantalla es de 973px a 1366px */
-      
-  }
   @media only screen and (max-width: 972px) { /* Cuando La pantalla es de 0px a 972px */
    
-      ul li a{
+      .headerposicion{
           padding-bottom: 1em;
       }
       .smalltitle{display: grid;} /* Muestra La version pequeña del texto (RFEBM)*/
