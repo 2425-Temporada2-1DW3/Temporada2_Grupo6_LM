@@ -390,10 +390,46 @@ footer img {
 .equipos img{width: 4em ; margin: 2.5em 3em 2.5em 0em;} 
 .equipos{
     display: grid;
-    grid-template-columns: auto auto ;
+    grid-template-columns: auto auto;
 }
 
+.equipos a li {
+    background-color: #EE797B;
+}
 
+/* PLANTILLAS EQUIPOS*/
+.jugador-lista {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.jugador {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.jugador img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.jugador p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.separador {
+    height: 1px;
+    background-color: #ddd;
+    margin: 0 20px;
+}
 /*
  ██████ ██       █████  ███████ ██ ███████ ██  ██████  █████   ██████ ██  ██████  ███    ██ 
 ██      ██      ██   ██ ██      ██ ██      ██ ██      ██   ██ ██      ██ ██    ██ ████   ██ 
@@ -425,4 +461,3 @@ footer img {
     width: 80%;
     margin: 4% 10% 4% 10%;
 }
-
