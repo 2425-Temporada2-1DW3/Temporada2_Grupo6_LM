@@ -3,187 +3,368 @@
 <!-- CALENDARIO XML-->
 
 <?xml-stylesheet type="text/xsl" href="Calendario.xsl"?>
-<?xml-model href="calendario_T1.xsd"?>
-
+<?xml-model href="XSD.xsd"?>
 
 <calendario>
     <mes nombreMes="febrero">
         <partido fecha="JUE. 01 FEB." estadio="Polideportivo MAP">
+            <Logo_Equipo_1>resources/images/logosEquipos/barcelona.png</Logo_Equipo_1>
             <equipo1>Barcelona</equipo1>
             <equipo2>Cáceres</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/caceres.png</Logo_Equipo_2>
             <hora>17:00</hora>
         </partido>
         <partido fecha="LUN. 05 FEB." estadio="Gregorio Marañón">
+            <Logo_Equipo_1>resources/images/logosEquipos/madrid.png</Logo_Equipo_1>
             <equipo1>Madrid</equipo1>
             <equipo2>Sevilla</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/sevilla.png</Logo_Equipo_2>
             <hora>16:30</hora>
         </partido>
         <partido fecha="MIÉ. 07 FEB." estadio="Arena's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/murcia.png</Logo_Equipo_1>
             <equipo1>Murcia</equipo1>
             <equipo2>Bilbao</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/bilbao.png</Logo_Equipo_2>
             <hora>17:45</hora>
         </partido>
     </mes>
-
     <mes nombreMes="marzo">
         <partido fecha="LUN. 04 MAR." estadio="Polideportivo Ríos">
+            <Logo_Equipo_1>resources/images/logosEquipos/caceres.png</Logo_Equipo_1>
             <equipo1>Cáceres</equipo1>
             <equipo2>Madrid</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/madrid.png</Logo_Equipo_2>
             <hora>16:00</hora>
         </partido>
         <partido fecha="VIE. 08 MAR." estadio="Patxi Aguirre">
+            <Logo_Equipo_1>resources/images/logosEquipos/sevilla.png</Logo_Equipo_1>
             <equipo1>Sevilla</equipo1>
             <equipo2>Barcelona</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/barcelona.png</Logo_Equipo_2>
             <hora>15:30</hora>
         </partido>
         <partido fecha="DOM. 10 MAR." estadio="Illo's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/bilbao.png</Logo_Equipo_1>
             <equipo1>Bilbao</equipo1>
             <equipo2>Murcia</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/murcia.png</Logo_Equipo_2>
             <hora>17:00</hora>
         </partido>
     </mes>
-
     <mes nombreMes="abril">
         <partido fecha="MAR. 02 ABR." estadio="Polideportivo MAP">
+            <Logo_Equipo_1>resources/images/logosEquipos/murcia.png</Logo_Equipo_1>
             <equipo1>Murcia</equipo1>
             <equipo2>Madrid</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/madrid.png</Logo_Equipo_2>
             <hora>17:00</hora>
         </partido>
         <partido fecha="JUE. 05 ABR." estadio="Gregorio Marañón">
+            <Logo_Equipo_1>resources/images/logosEquipos/sevilla.png</Logo_Equipo_1>
             <equipo1>Sevilla</equipo1>
             <equipo2>Bilbao</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/bilbao.png</Logo_Equipo_2>
             <hora>16:30</hora>
         </partido>
         <partido fecha="DOM. 08 ABR." estadio="Arena's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/caceres.png</Logo_Equipo_1>
             <equipo1>Cáceres</equipo1>
             <equipo2>Barcelona</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/barcelona.png</Logo_Equipo_2>
             <hora>18:00</hora>
         </partido>
     </mes>
-
     <mes nombreMes="mayo">
         <partido fecha="LUN. 06 MAY." estadio="Polideportivo Ríos">
+            <Logo_Equipo_1>resources/images/logosEquipos/bilbao.png</Logo_Equipo_1>
             <equipo1>Bilbao</equipo1>
             <equipo2>Sevilla</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/sevilla.png</Logo_Equipo_2>
             <hora>16:30</hora>
         </partido>
         <partido fecha="VIE. 10 MAY." estadio="Patxi Aguirre">
+            <Logo_Equipo_1>resources/images/logosEquipos/murcia.png</Logo_Equipo_1>
             <equipo1>Murcia</equipo1>
             <equipo2>Cáceres</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/caceres.png</Logo_Equipo_2>
             <hora>17:45</hora>
         </partido>
         <partido fecha="DOM. 12 MAY." estadio="Illo's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/barcelona.png</Logo_Equipo_1>
             <equipo1>Barcelona</equipo1>
             <equipo2>Madrid</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/madrid.png</Logo_Equipo_2>
             <hora>19:00</hora>
         </partido>
     </mes>
-
     <mes nombreMes="junio">
         <partido fecha="JUE. 06 JUN." estadio="Polideportivo MAP">
+            <Logo_Equipo_1>resources/images/logosEquipos/sevilla.png</Logo_Equipo_1>
             <equipo1>Sevilla</equipo1>
             <equipo2>Cáceres</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/caceres.png</Logo_Equipo_2>
             <hora>18:00</hora>
         </partido>
         <partido fecha="LUN. 10 JUN." estadio="Gregorio Marañón">
+            <Logo_Equipo_1>resources/images/logosEquipos/murcia.png</Logo_Equipo_1>
             <equipo1>Murcia</equipo1>
             <equipo2>Barcelona</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/barcelona.png</Logo_Equipo_2>
             <hora>16:30</hora>
         </partido>
         <partido fecha="MIÉ. 12 JUN." estadio="Arena's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/bilbao.png</Logo_Equipo_1>
             <equipo1>Bilbao</equipo1>
             <equipo2>Madrid</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/madrid.png</Logo_Equipo_2>
             <hora>17:45</hora>
         </partido>
     </mes>
-
     <mes nombreMes="julio">
         <partido fecha="VIE. 05 JUL." estadio="Polideportivo Ríos">
+            <Logo_Equipo_1>resources/images/logosEquipos/caceres.png</Logo_Equipo_1>
             <equipo1>Cáceres</equipo1>
             <equipo2>Sevilla</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/sevilla.png</Logo_Equipo_2>
             <hora>15:30</hora>
         </partido>
         <partido fecha="DOM. 08 JUL." estadio="Patxi Aguirre">
+            <Logo_Equipo_1>resources/images/logosEquipos/barcelona.png</Logo_Equipo_1>
             <equipo1>Barcelona</equipo1>
             <equipo2>Bilbao</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/bilbao.png</Logo_Equipo_2>
             <hora>17:00</hora>
         </partido>
         <partido fecha="LUN. 10 JUL." estadio="Illo's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/madrid.png</Logo_Equipo_1>
             <equipo1>Madrid</equipo1>
             <equipo2>Murcia</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/murcia.png</Logo_Equipo_2>
             <hora>16:00</hora>
         </partido>
     </mes>
-
     <mes nombreMes="agosto">
         <partido fecha="JUE. 02 AGO." estadio="Polideportivo MAP">
+            <Logo_Equipo_1>resources/images/logosEquipos/bilbao.png</Logo_Equipo_1>
             <equipo1>Bilbao</equipo1>
             <equipo2>Madrid</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/madrid.png</Logo_Equipo_2>
             <hora>17:45</hora>
         </partido>
         <partido fecha="LUN. 06 AGO." estadio="Gregorio Marañón">
+            <Logo_Equipo_1>resources/images/logosEquipos/sevilla.png</Logo_Equipo_1>
             <equipo1>Sevilla</equipo1>
             <equipo2>Murcia</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/murcia.png</Logo_Equipo_2>
             <hora>16:30</hora>
         </partido>
         <partido fecha="MIÉ. 08 AGO." estadio="Arena's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/caceres.png</Logo_Equipo_1>
             <equipo1>Cáceres</equipo1>
             <equipo2>Barcelona</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/barcelona.png</Logo_Equipo_2>
             <hora>19:00</hora>
         </partido>
     </mes>
-
     <mes nombreMes="septiembre">
         <partido fecha="LUN. 01 SEP." estadio="Polideportivo Ríos">
+            <Logo_Equipo_1>resources/images/logosEquipos/barcelona.png</Logo_Equipo_1>
             <equipo1>Barcelona</equipo1>
             <equipo2>Sevilla</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/sevilla.png</Logo_Equipo_2>
+            <hora>16:00</hora>
+        </partido>
+        <partido fecha="JUE. 04 SEP." estadio="Patxi Aguirre">
+            <Logo_Equipo_1>resources/images/logosEquipos/madrid.png</Logo_Equipo_1>
+            <equipo1>Madrid</equipo1>
+            <equipo2>Cáceres</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/caceres.png</Logo_Equipo_2>
+            <hora>18:00</hora>
+        </partido>
+        <partido fecha="DOM. 07 SEP." estadio="Illo's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/bilbao.png</Logo_Equipo_1>
+            <equipo1>Bilbao</equipo1>
+            <equipo2>Murcia</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/murcia.png</Logo_Equipo_2>
+            <hora>19:30</hora>
+        </partido>
+    </mes>
+    <mes nombreMes="octubre">
+        <partido fecha="MAR. 03 OCT." estadio="Polideportivo MAP">
+            <Logo_Equipo_1>resources/images/logosEquipos/sevilla.png</Logo_Equipo_1>
+            <equipo1>Sevilla</equipo1>
+            <equipo2>Barcelona</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/barcelona.png</Logo_Equipo_2>
+            <hora>17:00</hora>
+        </partido>
+        <partido fecha="VIE. 06 OCT." estadio="Gregorio Marañón">
+            <Logo_Equipo_1>resources/images/logosEquipos/murcia.png</Logo_Equipo_1>
+            <equipo1>Murcia</equipo1>
+            <equipo2>Bilbao</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/bilbao.png</Logo_Equipo_2>
             <hora>16:30</hora>
         </partido>
-        <partido fecha="MAR. 05 SEP." estadio="Patxi Aguirre">
+        <partido fecha="DOM. 08 OCT." estadio="Arena's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/caceres.png</Logo_Equipo_1>
+            <equipo1>Cáceres</equipo1>
+            <equipo2>Madrid</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/madrid.png</Logo_Equipo_2>
+            <hora>18:45</hora>
+        </partido>
+    </mes>
+    <mes nombreMes="noviembre">
+        <partido fecha="JUE. 02 NOV." estadio="Polideportivo Ríos">
+            <Logo_Equipo_1>resources/images/logosEquipos/madrid.png</Logo_Equipo_1>
+            <equipo1>Madrid</equipo1>
+            <equipo2>Sevilla</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/sevilla.png</Logo_Equipo_2>
+            <hora>16:45</hora>
+        </partido>
+        <partido fecha="LUN. 06 NOV." estadio="Patxi Aguirre">
+            <Logo_Equipo_1>resources/images/logosEquipos/barcelona.png</Logo_Equipo_1>
+            <equipo1>Barcelona</equipo1>
+            <equipo2>Bilbao</equipo2>
+            <Logo_Equipo_2>resources/images/logosEquipos/bilbao.png</Logo_Equipo_2>
+            <hora>17:00</hora>
+        </partido>
+        <partido fecha="MIÉ. 08 NOV." estadio="Illo's Arena">
+            <Logo_Equipo_1>resources/images/logosEquipos/murcia.png</Logo_Equipo_1>
             <equipo1>Murcia</equipo1>
             <equipo2>Cáceres</equipo2>
-            <hora>17:00</hora>
-        </partido>
-        <partido fecha="JUE. 07 SEP." estadio="Illo's Arena">
-            <equipo1>Bilbao</equipo1>
-            <equipo2>Madrid</equipo2>
-            <hora>18:00</hora>
-        </partido>
-    </mes>
-
-    <mes nombreMes="octubre">
-        <partido fecha="LUN. 05 OCT." estadio="Polideportivo MAP">
-            <equipo1>Sevilla</equipo1>
-            <equipo2>Bilbao</equipo2>
-            <hora>16:30</hora>
-        </partido>
-        <partido fecha="MAR. 08 OCT." estadio="Gregorio Marañón">
-            <equipo1>Cáceres</equipo1>
-            <equipo2>Barcelona</equipo2>
-            <hora>17:00</hora>
-        </partido>
-        <partido fecha="VIE. 10 OCT." estadio="Arena's Arena">
-            <equipo1>Madrid</equipo1>
-            <equipo2>Murcia</equipo2>
-            <hora>19:00</hora>
-        </partido>
-    </mes>
-
-    <mes nombreMes="noviembre">
-        <partido fecha="LUN. 05 NOV." estadio="Polideportivo MAP">
-            <equipo1>Bilbao</equipo1>
-            <equipo2>Cáceres</equipo2>
-            <hora>16:30</hora>
-        </partido>
-        <partido fecha="JUE. 07 NOV." estadio="Gregorio Marañón">
-            <equipo1>Madrid</equipo1>
-            <equipo2>Sevilla</equipo2>
-            <hora>17:00</hora>
-        </partido>
-        <partido fecha="MAR. 12 NOV." estadio="Arena's Arena">
-            <equipo1>Barcelona</equipo1>
-            <equipo2>Murcia</equipo2>
-            <hora>18:00</hora>
+            <Logo_Equipo_2>resources/images/logosEquipos/caceres.png</Logo_Equipo_2>
+            <hora>19:30</hora>
         </partido>
     </mes>
 </calendario>
+
+<!-- PLANTILLAS / JUGADORES-->
+
+<plantillas>
+    <encabezado>
+        <titulo>RFEBM</titulo>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=1920, initial-scale=1.0"/>
+        <enlaces>
+            <link rel="stylesheet" href="resources/css/styles.css"/>
+            <link rel="stylesheet" href="resources/css/responsive.css"/>
+            <link rel="shortcut icon" href="resources/images/favicon.png" type="image/x-icon"/>
+            <link rel="stylesheet" href="resources/css/normalize.css"/>
+            <script src="https://kit.fontawesome.com/77e72bf4fc.js" crossorigin="anonymous"/>
+            <link rel="stylesheet" href="resources/css/menuTempJugadoresEquipo.css"/>
+        </enlaces>
+    </encabezado>
+    
+    <cuerpo>
+        <encabezado>
+            <logo>
+                <a href="index.html"><img src="resources/images/logo.svg" alt="Main Site Logo"/></a>
+            </logo>
+            <titulo>
+                <a href="index.html" class="bigtitle">real federación española de balonmano</a>
+                <a href="index.html" class="smalltitle">rfebm</a>
+            </titulo>
+            <menu>
+                <ul>
+                    <li>
+                        <a href="#">Calendario</a>
+                        <menu-desplegable>
+                            <a href="calendar_T1.html">temporada 1</a>
+                            <a href="calendar_T2.html">temporada 2</a>
+                            <a href="calendar_T3.html">temporada 3</a>
+                        </menu-desplegable>
+                    </li>
+                    <li><a href="equipos.html">equipos</a></li>
+                    <li><a href="clasificacion_T1.html">clasificación</a></li>
+                    <li><a href="galeria.html">galería</a></li>
+                    <li><a href="contacto.html">contacto</a></li>
+                </ul>
+            </menu>
+        </encabezado>
+        
+        <principal>
+            <imagen class="mainImage" src="resources/images/mainImage.png" alt="imagen de decoracion"/>
+            <div class="titleDefault" id="barcelona">Barcelona</div>
+            <articulo>
+                <div class="equipos">
+                    <imagen src="resources/images/logosEquipos/barcelona.png" alt="Logo Equipos"/>
+                    <li>
+                        <a href="#">temporadas</a>
+                        <menu-desplegable>
+                            <a href="equipos_plantilla_T1.html">temporada 1</a>
+                            <a href="equipos_plantilla_T2.html">temporada 2</a>
+                            <a href="equipos_plantilla_T3.html">temporada 3</a>
+                        </menu-desplegable>
+                    </li>
+                    <descripcion>
+                        <p>El equipo de balonmano Barcelona es el equipo representante de Cataluña en la Real Federación Española de Balonmano...</p>
+                        <p>Dirección del campo: Calle Mikeltxon, 6, 76093 Barcelona.</p>
+                    </descripcion>
+                    
+                    <jugadores>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Lamine Jamal</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Lionel Pepsi</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Karim Abad</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Zaid Jaén</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Malek Salomon</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Daim Benitez</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Vadhir Granadino</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Jaleel Alaoui</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Paco Rabales</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Mohammed Arduino</nombre>
+                        </jugador>
+                        <jugador>
+                            <imagen src="resources/images/logosequipos/barcelona.png" alt="Logo Equipos"/>
+                            <nombre>Hermenegildo Augusto</nombre>
+                        </jugador>
+                    </jugadores>
+                </div>
+            </articulo>
+        </principal>
+        
+        <pie>
+            <imagen class="imagen" src="resources/images/gobespana.png" alt="Comprobante gobierno español"/>
+            <div class="footersocialtext">Redes Sociales</div>
+            <footericons>
+                <icono><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></icono>
+                <icono><a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></icono>
+                <icono><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></icono>
+                <icono><a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></icono>
+            </footericons>
+            <informacion>
+                INFORMACIÓN DE CONTACTO <br/> rfebm@gobespana.gov <br/> +34 673 47 44 84 <br/> Avenida de Mikel 9, Madrid, España
+            </informacion>
+        </pie>
+    </cuerpo>
+
+
+</plantillas>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- CALENDARIO-->
+
+    <xs:element name="calendario">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="mes" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="partido" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Logo_Equipo_1" type="xs:string" />
+                                        <xs:element name="equipo1" type="xs:string" />
+                                        <xs:element name="equipo2" type="xs:string" />
+                                        <xs:element name="Logo_Equipo_2" type="xs:string" />
+                                        <xs:element name="hora" type="xs:string" />
+                                    </xs:sequence>
+                                    <xs:attribute name="fecha" use="required" />
+                                    <xs:attribute name="estadio" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="nombreMes" type="xs:ID" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+
+
+<!-- PLANTILLAS/JUGADORES -->
+
+<!-- Definición de la raíz del documento -->
+    <xs:element name="plantillas">
+        <xs:complexType>
+            <xs:sequence>
+                
+                <!-- Encabezado -->
+                <xs:element name="encabezado">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="titulo" type="xs:string"/>
+                            <xs:element name="meta" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="charset" type="xs:string" />
+                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="content" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="enlaces">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="link" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="rel" type="xs:string" />
+                                                    <xs:element name="href" type="xs:string" />
+                                                    <xs:element name="type" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="script" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="src" type="xs:string" />
+                                                    <xs:element name="crossorigin" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Cuerpo principal -->
+                <xs:element name="cuerpo">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="encabezado">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="logo">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="a" type="xs:string"/>
+                                                    <xs:element name="img">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="src" type="xs:string"/>
+                                                                <xs:element name="alt" type="xs:string"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="titulo">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="a" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="menu">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ul">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="li" maxOccurs="unbounded">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="a" type="xs:string"/>
+                                                                            <xs:element name="menu-desplegable">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="a" type="xs:string" maxOccurs="unbounded"/>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            
+                            <!-- Principal -->
+                            <xs:element name="principal">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="imagen">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="src" type="xs:string" />
+                                                    <xs:element name="alt" type="xs:string" />
+                                                    <xs:element name="class" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="div">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="articulo">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="div">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="img">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="src" type="xs:string" />
+                                                                                        <xs:element name="alt" type="xs:string" />
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element name="li">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="a" type="xs:string"/>
+                                                                                        <xs:element name="menu-desplegable">
+                                                                                            <xs:complexType>
+                                                                                                <xs:sequence>
+                                                                                                    <xs:element name="a" type="xs:string" maxOccurs="unbounded"/>
+                                                                                                </xs:sequence>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element name="descripcion">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="p" type="xs:string" maxOccurs="unbounded"/>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element name="jugadores">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="jugador" maxOccurs="unbounded">
+                                                                                            <xs:complexType>
+                                                                                                <xs:sequence>
+                                                                                                    <xs:element name="imagen">
+                                                                                                        <xs:complexType>
+                                                                                                            <xs:sequence>
+                                                                                                                <xs:element name="src" type="xs:string" />
+                                                                                                                <xs:element name="alt" type="xs:string" />
+                                                                                                            </xs:sequence>
+                                                                                                        </xs:complexType>
+                                                                                                    </xs:element>
+                                                                                                    <xs:element name="nombre" type="xs:string"/>
+                                                                                                </xs:sequence>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <!-- Pie de página -->
+                            <xs:element name="pie">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="imagen">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="src" type="xs:string" />
+                                                    <xs:element name="alt" type="xs:string" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="div">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="footericons">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="icono" maxOccurs="unbounded">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="a" type="xs:string"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="informacion" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>
