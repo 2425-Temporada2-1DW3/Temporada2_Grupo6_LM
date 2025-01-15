@@ -9,11 +9,8 @@
   que sera mostrado cuando la pantalla sea menor que 973px,
   ese codigo esta en la parte del RESPONSIVE */
 
-  @media only screen and (max-width: 972px) { /* Cuando La pantalla es de 0px a 972px */
-  
-    .imagen{
-        display: none;
-    }
+  @media only screen and (max-width: 1272px) { /* Cuando La pantalla es de 0px a 972px */
+    .imagen{display: none;}
 }
 
   @media only screen and (max-width: 972px) { /* Cuando La pantalla es de 0px a 972px */
@@ -23,5 +20,4 @@
       }
       .smalltitle{display: grid;} /* Muestra La version pequeña del texto (RFEBM)*/
       .bigtitle{display: none;} /*Esconde la version grande del texto (REAL FEDERACION ESPAÑOLA DE BALONMANO)*/
-  
   }
