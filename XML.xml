@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- CALENDARIO XML-->
+
 <?xml-stylesheet type="text/xsl" href="Calendario.xsl"?>
 <?xml-model href="calendario_T1.xsd"?>
 
