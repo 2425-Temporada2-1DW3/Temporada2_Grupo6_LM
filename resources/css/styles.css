@@ -396,11 +396,15 @@ S
     grid-template-columns: auto auto;
 }
 
-.equipos a li {
-    background-color: #EE797B;
-}
 
 /* PLANTILLAS EQUIPOS*/
+.plantilla{
+    text-decoration: none;
+    list-style: none;
+}
+.plantilla:hover{
+    color: red;
+}
 .jugador-lista {
     width: 100%;
     margin: 20px auto;
