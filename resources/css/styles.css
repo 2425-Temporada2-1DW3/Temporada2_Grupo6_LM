@@ -398,25 +398,27 @@ S
 
 
 
-/* Estilo para los elementos del menú desplegable */
 
 .list{
-    text-decoration: none;
-    list-style: none;
+   list-style: none;
+   margin-right: 10%;
 }
 
 /* Estilo para los enlaces principales */
-.menu .list a {
+.list a {
     color: black; /* Color de texto negro */
     background-color: #FFDCE0; /* Fondo del desplegable en color #F7ABAE */
     text-align: center;
+    display: list-item;
 }
 
 
 /* Mostrar el menú desplegable cuando el usuario pasa el mouse sobre el elemento */
-.menu .list:hover .plantilla-desplegable {
-    display: block;
+.list:hover .plantilla-desplegable a {
+    display: list-item;
+    text-align: center;
 }
+
 
 /* Estilo para los enlaces del desplegable */
 .plantilla-desplegable a {
