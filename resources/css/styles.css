@@ -397,6 +397,42 @@ S
 }
 
 
+
+/* Estilo para los elementos del menú desplegable */
+
+.list{
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Estilo para los enlaces principales */
+.menu .list a {
+    color: black; /* Color de texto negro */
+    background-color: #FFDCE0; /* Fondo del desplegable en color #F7ABAE */
+    text-align: center;
+}
+
+
+/* Mostrar el menú desplegable cuando el usuario pasa el mouse sobre el elemento */
+.menu .list:hover .plantilla-desplegable {
+    display: block;
+}
+
+/* Estilo para los enlaces del desplegable */
+.plantilla-desplegable a {
+    color: black; /* Color de texto negro */
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Cambio de color al pasar el mouse sobre los enlaces */
+.plantilla-desplegable a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Ligero cambio de color de fondo */
+}
+
+
 /* PLANTILLAS EQUIPOS*/
 .plantilla{
     text-decoration: none;
@@ -468,3 +504,4 @@ S
     width: 80%;
     margin: 4% 10% 4% 10%;
 }
+
