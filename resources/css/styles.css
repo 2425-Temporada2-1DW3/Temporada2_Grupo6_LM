@@ -410,6 +410,7 @@ S
     background-color: #FFDCE0; /* Fondo del desplegable en color #F7ABAE */
     text-align: center;
     display: list-item;
+ 
 }
 
 
@@ -425,7 +426,7 @@ S
     color: black; /* Color de texto negro */
     padding: 10px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 13px;
     text-align: center;
 }
 
@@ -507,3 +508,23 @@ S
     margin: 4% 10% 4% 10%;
 }
 
+/*
+ ███    ██  █████████   ██████████  ████████    ████████    ██████████  ██████████
+ ████   ██  ██     ██       ██         ██       ██              ██      ██      ██
+ ██  ██ ██  ██     ██       ██         ██       ██              ██      ██████████
+ ██   ████  ██     ██       ██         ██       ██              ██      ██      ██
+ ██    ███  █████████       ██      ████████    ████████    ██████████  ██      ██
+*/
+
+.mainGal{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+img .desplazamiento{
+    flex: 1 0 auto;
+}
+.mainGal img{
+width: 25%;
+height: 25%;
+}
