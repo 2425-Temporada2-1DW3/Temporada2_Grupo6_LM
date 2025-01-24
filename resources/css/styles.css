@@ -515,16 +515,40 @@ S
  ██   ████  ██     ██       ██         ██       ██              ██      ██      ██
  ██    ███  █████████       ██      ████████    ████████    ██████████  ██      ██
 */
-
+/*Contenedor principal de la galeria*/
 .mainGal{
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: scroll;
+    display: flex;/*Permite aliniar los elementos en línea horizantal*/
+    overflow: hidden;/*Oculta los partes de los imágenes que sobresale del contenido*/
+    position: relative;/*Establese un contexto de posición para ños botones*/
+    align-items: center;/*Centra verticalmente los elemntos dentro del contenedor*/
+    width: 50%;
+    margin: 2em 25% 2em 25%;
 }
-img .desplazamiento{
-    flex: 1 0 auto;
+/*Estilo para los imágenes del carusel*/
+.desplazamiento {
+    flex-shrink: 0; /* Evita que las imágenes se compriman */
+    width: 100%; /* Asegura que cada imagen ocupe todo el ancho del contenedor */
+    height: 100%; /* Asegura que las imágenes se adapten al contenedor */
+    object-fit: cover; /* Escala las imágenes para llenar el contenedor sin deformarlas */
+    transition: transform 0.5s ease-in-out; /* Suaviza el desplazamiento */
 }
-.mainGal img{
-width: 25%;
-height: 25%;
+/*Botones para navegar hacia atrás y delante*/
+.atrasbotom, .adelantebotom{
+    position: absolute;/*Ubila los botones en relacion al contenedor de la galeria*/
+    top: 50%;/*Centra varticalmente los botones dentro del contenedor*/
+    transform: translateY(-50%);/*Ajusta la posicion para que el centri del botón esté aliniado */
+    background-color: rgba(0, 0, 0, 0.5);/*fondo semitransporte para destacar el botón*/
+    color: white;/*color del texto o ícono del boton*/
+    font-size: 24px;/*tamaño del texto o ícono */
+    padding: 10px;/*Espaciado interno del botón*/
+    cursor: pointer;/*Cambia el cirsor al  icono de ma,p al pasar sobre el botón*/
+    z-index: 10;/*Asegura que los botones estén por encima de los imágenes*/
+}
+/*Botón de retroceso(izquerdo)*/
+.atrasbotom{
+    left: 10px;/*Coloca el botón a 10px del birde izquerdo del contenedor*/
+}
+/*Botón de avance (derecho)*/
+.adelantebotom{
+    right: 10px;/*Coloca el botón a 10px del borde derecho del contenedor*/
 }
