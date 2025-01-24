@@ -1,3 +1,4 @@
+//Carusel de los imagenes
 // Espera a que el DOM esté completamente cargado antes de ejecutar el código
 document.addEventListener("DOMContentLoaded", () => {
     // Selecciona el contenedor de la galería
