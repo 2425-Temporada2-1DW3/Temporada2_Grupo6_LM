@@ -1,58 +1,78 @@
-//Carusel de los imagenes
-// Espera a que el DOM esté completamente cargado antes de ejecutar el código
-document.addEventListener("DOMContentLoaded", () => {
-    // Selecciona el contenedor de la galería
+function inicializarCarrusel() {
+    // Selección de elementos
     const galeria = document.querySelector(".mainGal");
-
-    // Selecciona todas las imágenes de la galería
     const imagenes = document.querySelectorAll(".desplazamiento");
+    const botonAtras = document.querySelector(".atrasboton");
+    const botonAdelante = document.querySelector(".adelanteboton");
 
-    // Selecciona el botón para ir hacia atrás
-    const botonAtras = document.querySelector(".atrasbotom");
+    if (!galeria || !imagenes.length || !botonAtras || !botonAdelante) {
+        return; // Sale de la función si faltan elementos
+    }
 
-    // Selecciona el botón para ir hacia adelante
-    const botonAdelante = document.querySelector(".adelantebotom");
+    let indiceActual = 0; // Índice de la imagen actual
+    let bloqueado = false; // Previene clics múltiples rápidos
 
-    // Define el índice de la imagen actualmente visible (comienza en 0)
-    let indiceActual = 0;
-
-    // Función para mostrar la imagen actual basándose en el índice
+    // Función para mostrar la imagen actual
     function mostrarImagen() {
-        const anchoImagen = galeria.offsetWidth; // Obtén el ancho del contenedor dinámicamente
-        console.log(`Ancho de la galería: ${anchoImagen}`); // Verificar el ancho
-        const desplazamiento = -anchoImagen * indiceActual; // Calcula el desplazamiento correcto
-        console.log(`Desplazamiento calculado: ${desplazamiento}`); // Depuración
+        const anchoImagen = galeria.offsetWidth;
+        const desplazamiento = -anchoImagen * indiceActual;
         imagenes.forEach((img) => {
-            img.style.transform = `translateX(${desplazamiento}px)`; // Desplaza las imágenes
+            img.style.transform = `translateX(${desplazamiento}px)`;
         });
-    }        
+    }
 
-    let bloqueado = false; // Evita clics rápidos
-    // Evento para manejar el clic en el botón de avanzar
+    // Manejar clic en botón adelante
     botonAdelante.addEventListener("click", () => {
-        if (bloqueado) return; // Si está bloqueado, no hace nada
-        bloqueado = true; // Bloquea clics adicionales
+        if (bloqueado) return;
+        bloqueado = true;
         if (indiceActual < imagenes.length - 1) {
             indiceActual++;
         } else {
             indiceActual = 0;
         }
         mostrarImagen();
-        setTimeout(() => bloqueado = false, 500); // Desbloquea después de 500ms
+        setTimeout(() => (bloqueado = false), 500);
     });
-    
+
+    // Manejar clic en botón atrás
     botonAtras.addEventListener("click", () => {
-        if (bloqueado) return; // Si está bloqueado, no hace nada
-        bloqueado = true; // Bloquea clics adicionales
+        if (bloqueado) return;
+        bloqueado = true;
         if (indiceActual > 0) {
             indiceActual--;
         } else {
             indiceActual = imagenes.length - 1;
         }
         mostrarImagen();
-        setTimeout(() => bloqueado = false, 500); // Desbloquea después de 500ms
+        setTimeout(() => (bloqueado = false), 500);
     });
-    
-    // Ajusta el desplazamiento cuando la ventana cambia de tamaño
+
+    // Ajustar carrusel en caso de redimensionar la ventana
     window.addEventListener("resize", mostrarImagen);
-});
+
+    // Muestra la primera imagen al cargar
+    mostrarImagen();
+}
+
+
+
+function JugadoresTabla() {
+    // Usar delegación de eventos para manejar los clics en los botones de jugadores
+    document.body.addEventListener('click', function (event) {
+        if (event.target.classList.contains('toggle-jugadores')) {
+            const listaJugadores = document.querySelector(event.target.getAttribute('data-target'));
+
+            // Alternamos la visibilidad de la lista de jugadores
+            if (listaJugadores.style.display === 'none' || listaJugadores.style.display === '') {
+                listaJugadores.style.display = 'block';
+            } else {
+                listaJugadores.style.display = 'none';
+            }
+        }
+    });
+}
+// Inicializar después de que se cargue el contenido dinámico
+$(document).on("ajaxComplete", function () {
+    JugadoresTabla();
+    inicializarCarrusel();
+}); 

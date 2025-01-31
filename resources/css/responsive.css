@@ -1,6 +1,6 @@
 /* -- CODIGO PARA QUE LA PAGINA WEB SEA RESPONSIVE -- */
 
-/* ".hg2" es el tiulo principal, asi que se ajustan un poco el padding y el tamaño de la fuente */
+/* ".hg2" es el titulo principal, asi que se ajustan un poco el padding y el tamaño de la fuente */
 /* "nav ul li" es los botones de la barra de navegacion, se ajustan para ser mas pequeños y tener menos margen y padding */
 /* "nav ul li a" es el texto dentro de los botones, solo se ajusta el tamaño de la fuente */
 
@@ -22,4 +22,66 @@
       }
       .smalltitle{display: grid;} /* Muestra La version pequeña del texto (RFEBM)*/
       .bigtitle{display: none;} /*Esconde la version grande del texto (REAL FEDERACION ESPAÑOLA DE BALONMANO)*/
+
+
+      .mainText {
+        font-size: 0.9em;
+       }
   }
+  @media only screen and (max-width: 800px) { /* Cuando La pantalla es de 0px a 972px */
+/*Header y footer */
+
+
+    /* Inicioooooooo */
+    .mainMatches div {
+     font-size: medium;
+     }
+     .mainMatches h2 {
+      font-size: medium;
+     }
+     .mainNews h2 {
+       font-size: medium;
+      }
+      .footerinf {
+        font-size: medium;
+        }
+      .mainSponsors h2 {
+       font-size: smaller;
+      }
+      .mainText {
+        font-size: 0.8em;
+       }
+       footer div {
+        font-size: medium;
+       }
+       nav ul li {
+        font-size: small;
+      }
+}
+  @media only screen and (max-width: 420px) { /* Cuando La pantalla es de 0px a 972px */
+   
+    .mainMatches h2 {
+     font-size: xx-small;
+    }
+    .mainNews h2 {
+      font-size: small;
+     }
+     .mainSponsors h2 {
+      font-size: xx-small;
+     }
+    .mainMatches div {
+     font-size: smaller;
+     }
+     .footerinf {
+      font-size: smaller;
+      }
+     .mainText {
+      font-size: 0.7em;
+     }
+     footer div {
+      font-size: smaller;
+     }
+     nav ul li {
+      font-size: xx-small;
+    }
+}

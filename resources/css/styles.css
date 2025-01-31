@@ -147,7 +147,10 @@ nav ul a {                                                        /* -- TEXTO DE
      ██████  ██████  ██   ████    ██    ███████ ██   ████ ██ ██████   ██████                                                                      
 */
 
-.mainImage {width: 100%;}                       /* Permite que la imagen se reescale con el tamaño de la pagina */
+.mainImage {width: 100%;
+            margin-bottom: 4%;
+}    
+                   /* Permite que la imagen se reescale con el tamaño de la pagina */
 .mainText{margin: 1.2em 3.6em 1.2em 3.6em;font-size: 1.2em;text-align: justify;} /* Margenes genericos para el texto dentro de el contenido principal*/
 
 .titleDefault {                                 /*Esta clase se usa para los separadores de contenido*/
@@ -161,7 +164,8 @@ nav ul a {                                                        /* -- TEXTO DE
     color:var(--main_col_6);                    /* Color de la fuente */
     background-color: var(--main_col_1);        /* Color dentro de los bordes*/
 }
-article{margin: 4% 0% 4% 0%;}                   /* Márgenes genéricos para el texto dentro de el contenido principal*/
+                 /* Márgenes genéricos para el texto dentro de el contenido principal*/
+article{margin:0% 0% 4% 0%}
 article h2{ 
     writing-mode: vertical-rl;                  /* Tipo de escritura para que funcione el texto en vertical*/
     text-orientation: upright;                  /* Selecciona el texto en vertical */
@@ -169,7 +173,7 @@ article h2{
     text-align: center;                         /* Centra el texto */
     margin:0;                                   /* Quita margenes de texto por defecto */
     padding: 0 1.2em 0 1.2em;                   /* Padding arriba y abajo porque no hay manera de centrar en vertical*/
-    font-size: 1.8em;                             /* Tamaño de fuente */
+    font-size: 1.8em;                           /* Tamaño de fuente */
     color: var(--main_col_9);                   /* Color de Fuente */
     background-color: var(--main_col_5);        /* Color del bloque */
 }
@@ -313,7 +317,7 @@ footer img {
 /*
      ██████  █████  ██      ███████ ███    ██ ██████   █████  ██████  ██  ██████  
     ██      ██   ██ ██      ██      ████   ██ ██   ██ ██   ██ ██   ██ ██ ██    ██ 
-    ██      ███████ ██      █████   ██ ██  ██ ██   ██ ███████ ██████  ██ ██    ██2
+    ██      ███████ ██      █████   ██ ██  ██ ██   ██ ███████ ██████  ██ ██    ██
     ██      ██   ██ ██      ██      ██  ██ ██ ██   ██ ██   ██ ██   ██ ██ ██    ██ 
      ██████ ██   ██ ███████ ███████ ██   ████ ██████  ██   ██ ██   ██ ██  ██████  
 */
@@ -397,6 +401,23 @@ S
 }
 
 
+.selector-temporada{
+    padding: 1% 1% 1% 1%;
+    display:flex
+}
+.boton-temporada{
+    background-color: var(--main_col_6);
+    color: white;
+    padding: 0.5em 1em;
+    margin-right: 2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.boton-temporada:hover{
+    background-color: var(--main_col_7);
+}
 
 
 .list{
@@ -444,15 +465,54 @@ S
 .plantilla:hover{
     color: red;
 }
-.jugador-lista {
+.jugador-lista-barcelona {
     width: 100%;
     margin: 20px auto;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    overflow: hidden;
+    display: none;
 }
-
+.jugador-lista-madrid {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: none;
+}
+.jugador-lista-cáceres {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: none;
+}
+.jugador-lista-bilbao {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: none;
+}
+.jugador-lista-sevilla {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: none;
+}
+.jugador-lista-murcia {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: none;
+}
 .jugador {
     display: flex;
     align-items: center;
@@ -533,7 +593,7 @@ S
     transition: transform 0.5s ease-in-out; /* Suaviza el desplazamiento */
 }
 /*Botones para navegar hacia atrás y delante*/
-.atrasbotom, .adelantebotom{
+.atrasboton, .adelanteboton{
     position: absolute;/*Ubila los botones en relacion al contenedor de la galeria*/
     top: 50%;/*Centra varticalmente los botones dentro del contenedor*/
     transform: translateY(-50%);/*Ajusta la posicion para que el centri del botón esté aliniado */
@@ -545,10 +605,10 @@ S
     z-index: 10;/*Asegura que los botones estén por encima de los imágenes*/
 }
 /*Botón de retroceso(izquerdo)*/
-.atrasbotom{
+.atrasboton{
     left: 10px;/*Coloca el botón a 10px del birde izquerdo del contenedor*/
 }
 /*Botón de avance (derecho)*/
-.adelantebotom{
+.adelanteboton{
     right: 10px;/*Coloca el botón a 10px del borde derecho del contenedor*/
 }
