@@ -325,9 +325,10 @@ footer img {
 .calendar img{width: 2.2em; margin: 0.2em 0.5em;vertical-align: middle;}                    /*Tamaño y margenes de las fotos de los equipos*/
 .calendar {
     display: grid;  /* Que use grid */
-    grid-template-columns: 10em 35em 3em 7em 5em 7em 3em 15em;                 /* Configuracion y espacio que ocupa el grid*/
+    grid-template-columns: 15em 35em 3em 20em 3em 7em 3em ;                 /* Configuracion y espacio que ocupa el grid*/
     margin: 0.5em 0;                                             /* Margenes entre filas */
 }
+.polideportivo {text-align: center; margin: auto;}
 .calendarDateText { text-align: center; margin: auto;}                   /* Alinea el centro y pone margenes*/
 .calendarFieldText,.calendarTextTeam1,.calendarTextTeam2{ margin: auto;} /* Pone margenes*/
 .calendarTeam1 , .calendarTeam2{
@@ -342,6 +343,9 @@ footer img {
     text-align: center;                                                  /* Alinea el texto a la derecha*/
     margin: auto;                                                        /* Pone márgenes*/
 }
+
+
+.resultado {width: 5em;}
 
 /*
 N
@@ -548,6 +552,9 @@ S
     border: 0.1em solid;
     border-color: var(--main_col_2);
     color: var(--main_col_9);
+}
+:first th {
+    column-span: 2;
 }
 .tablaColOscuro{
     background-color: var(--main_col_6);

@@ -77,6 +77,8 @@ $(document).ready(function () {
                     botonTemporada.on("click", function () {
                         cargarJugadoresPorTemporada(idTemporada, xml);
                         actualizarTituloTemporada(nombreTemporada)
+                        cargarJornadas(idTemporada, xml);
+                        cargarClasificacion(idTemporada, xml);
                     });
     
                     divTemporada.append(botonTemporada);
@@ -92,6 +94,8 @@ $(document).ready(function () {
                 if (primeraTemporada) {
                     console.log("Seleccionando primera temporada por defecto:", primeraTemporada.id);
                     cargarJugadoresPorTemporada(primeraTemporada.id, primeraTemporada.xml);
+                    cargarJornadas(primeraTemporada.id, primeraTemporada.xml);
+                    cargarClasificacion(primeraTemporada.id, primeraTemporada.xml);
                     $(".boton-temporada").first().addClass("seleccionado"); // Opcional: marcar botón seleccionado
                     actualizarTituloTemporada($(".boton-temporada").first().text());
                 }
@@ -157,7 +161,195 @@ $(document).ready(function () {
         // Agregar el título al contenedor (puedes elegir el contenedor adecuado para mostrarlo)
         $(".titulo-temporada").empty().append(titulo);  // Asegúrate de tener un contenedor con la clase "titulo-temporada" en tu HTML
     }
+    function cargarJornadas(idTemporada, xml) {
+        let temporada = $(xml).find(`Temporada[id='${idTemporada}']`);
+        if (temporada.length === 0) {
+            console.warn("No se encontró la temporada con ID:", idTemporada);
+            return;
+        }
     
+        // Obtener la fecha de la temporada (formato "2023-2024")
+        let fechaTemporada = temporada.attr("fecha");
+        let [añoInicio, añoFin] = fechaTemporada.split("-").map(Number);
+    
+        // Inicializamos la fecha de inicio en Octubre del año de inicio
+        let fechaInicio = new Date(añoInicio, 9, 1); // Comenzamos en OCTUBRE (mes 9)
+        
+        // Definimos los polideportivos para cada equipo
+        let polideportivos = {
+            "Barcelona": "Polideportivo MAP",
+            "Madrid": "Gregorio Marañón",
+            "Murcia": "Arena's Arena",
+            "Cáceres": "Polideportivo Rios",
+            "Bilbao": "Patxi Aguirre",
+            "Sevilla": "Illo's Arena"
+        };
+        
+        // Iteramos por cada jornada
+        for (let jornadaNum = 1; jornadaNum <= 10; jornadaNum++) {
+            let jornada = temporada.find(`Jornada_${jornadaNum}`);
+            if (jornada.length === 0) continue; // Si no hay jornada, saltamos
+            
+            let partidos = jornada.find("Partido");
+            let resultados = jornada.find("Resultado");
+    
+            let jornadaContainer = $(`.calendar_${jornadaNum}`);
+            if (jornadaContainer.length === 0) {
+                console.warn(`No se encontró el contenedor para jornada ${jornadaNum}`);
+                continue;
+            }
+    
+            jornadaContainer.empty();
+    
+            // Generamos el título con el mes y el año dinámicos
+            let mesActual = fechaInicio.getMonth();
+            let anioActual = fechaInicio.getFullYear();
+            let meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"];
+    
+            // En vez de añadir un nuevo título, actualizamos el ya existente
+            let titleContainer = jornadaContainer.prev('.titleDefault'); // Buscamos el contenedor previo con la clase .titleDefault
+            if (titleContainer.length === 0) {
+                // Si no existe, creamos uno nuevo
+                titleContainer = $(`<div class="titleDefault">${meses[mesActual]} ${anioActual}</div>`);
+                jornadaContainer.before(titleContainer);
+            } else {
+                // Si ya existe, simplemente actualizamos el texto
+                titleContainer.text(`${meses[mesActual]} ${anioActual}`);
+            }
+    
+            fechaInicio.setMonth(mesActual + 1);
+            if (fechaInicio.getMonth() === 0) {
+                fechaInicio.setFullYear(anioActual + 1); // Si pasamos a enero, sumamos un año
+            }
+    
+            // Mostrar los partidos de la jornada
+            partidos.each(function (index) {
+                if (index >= 3) return false; // Solo mostramos los primeros 3 partidos
+    
+                let datosPartido = $(this).text().split(",");
+                let nombreLocal = datosPartido[0].trim();
+                let nombreVisitante = datosPartido[1].trim();
+    
+                let golesLocal = "N/A";
+                let golesVisitante = "N/A";
+    
+                // Si hay resultados disponibles, los agregamos
+                if (index < resultados.length) {
+                    let datosResultado = $(resultados[index]).text().split(",");
+                    golesLocal = datosResultado[0]?.trim() || "N/A";
+                    golesVisitante = datosResultado[1]?.trim() || "N/A";
+                }
+    
+                // Fechas y horarios de los partidos
+                let fechas = ["JUE. 24", "LUN. 28", "MIÉ. 30"];
+                let horas = ["17:00", "16:00", "19:00"];
+    
+                // Asignamos el polideportivo dependiendo del equipo local
+                let polideportivo = polideportivos[nombreLocal] || "Polideportivo No Definido";
+    
+                // Generamos el HTML para el partido
+                let partidoHTML = `
+                    <div class="calendar">
+                        <div class="calendarDateText">${fechas[index]} ${meses[mesActual]}</div>
+                        <div class="polideportivo${index + 1} polideportivo">${polideportivo}</div>
+                        <a class="enlaceLocal" href="javascript:void(0);" data-team="${nombreLocal.toLowerCase()}">
+                            <img class="imagenLocal" src="resources/images/logosEquipos/${nombreLocal.toLowerCase()}.png" alt="Logo ${nombreLocal}">
+                        </a>
+                        <div class="calendarVersusText">${nombreLocal} vs ${nombreVisitante}</div>
+                        <a class="enlaceVisitante" href="javascript:void(0);" data-team="${nombreVisitante.toLowerCase()}">
+                            <img class="imagenVisitante" src="resources/images/logosEquipos/${nombreVisitante.toLowerCase()}.png" alt="Logo ${nombreVisitante}">
+                        </a>            
+                        <div class="calendarHourText">${horas[index]}</div>
+                        <div class="resultado">Resultado: ${golesLocal} - ${golesVisitante}</div>
+                    </div>
+                `;
+    
+                // Añadir el partido al contenedor de la jornada
+                jornadaContainer.append(partidoHTML);
+            });
+        }
+    
+        // Manejo del evento de clic en las imágenes de los equipos
+        $(document).on('click', '.enlaceLocal, .enlaceVisitante', function(e) {
+            e.preventDefault();  // Prevenimos el comportamiento por defecto (redirigir a otra página)
+    
+            var teamId = $(this).data('team');  // Obtenemos el id del equipo (como 'madrid' o 'barcelona')
+            
+            // Verificamos si el evento de clic se ha disparado
+            console.log("Clic en equipo:", teamId);
+    
+            // Primero, vamos a verificar si estamos en la página principal (index.html).
+            // Si estamos en la misma página, podemos simplemente agregar el hash.
+            if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+                // Si ya estamos en index, solo redirigimos a la sección correspondiente.
+                window.location.hash = "#equipos";  // Esto hará que el navegador se desplace a la sección #equipos
+                $("#" + teamId).show();  // También mostramos el detalle del equipo que hemos clicado
+            } else {
+                // Si estamos en una página diferente, redirigimos a index.html y añadimos el hash para saltar a equipos.
+                window.location.href = "index.html#equipos";  // Redirige a index.html y pasa a la sección #equipos
+            }
+        });
+    }
+    function cargarClasificacion(idTemporada, xml) {
+        // Obtener el contenedor de la tabla de clasificación
+        let clasificacionContainer = $("#cuerpoClasificacion");
+    
+        // Limpiar el contenedor antes de cargar los nuevos datos
+        clasificacionContainer.empty();
+    
+        // Buscar la temporada con el id correspondiente
+        let temporadaSeleccionada = $(xml).find("Temporada").filter(function() {
+            return $(this).attr("id") === idTemporada;
+        });
+    
+        // Si encontramos la temporada, cargamos su clasificación
+        if (temporadaSeleccionada.length > 0) {
+            let temporada = temporadaSeleccionada.first();
+            let nombreTemporada = temporada.attr("nombre");
+    
+            // Crear un título para la temporada seleccionada
+            clasificacionContainer.append(`<h3>${nombreTemporada}</h3>`);
+    
+            // Crear una tabla para la temporada
+            let tabla = $("<table>").addClass("tabla-clasificacion");
+            let thead = $("<thead>").append("<tr><th colspan=2>Club</th><th>Puntos</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>GF</th><th>GC</th><th>DG</th></tr>");
+            let tbody = $("<tbody>");
+    
+            // Leer los equipos de la clasificación de la temporada
+            temporada.find("Clasificacion > Equipo").each(function(index) {
+                if (index === 0) return; // Saltar la primera fila (cabecera en el XML)
+    
+                let datos = $(this).text().split(",");
+                let fila = $("<tr>");
+    
+                // Asumimos que el primer dato es el nombre del equipo
+                let nombreEquipo = datos[0].toLowerCase();  // Convertimos el nombre a minúsculas
+    
+                // Crear una celda para el escudo del equipo
+                let celdaEscudo = $("<td>");
+                let imgEscudo = $("<img>").attr("src", `resources/images/logosEquipos/${nombreEquipo}.png`).addClass("escudo-equipo");
+                celdaEscudo.append(imgEscudo);
+    
+                // Crear una celda para el nombre del equipo
+                let celdaNombreEquipo = $("<td>").text(datos[0]);
+    
+                // Añadir las celdas para el nombre y el escudo
+                fila.append(celdaEscudo);
+                fila.append(celdaNombreEquipo);
+    
+                // Añadir las celdas de los datos restantes
+                for (let i = 1; i < datos.length; i++) {
+                    fila.append(`<td>${datos[i]}</td>`);
+                }
+    
+                tbody.append(fila);
+            });
+    
+            // Añadir la tabla al contenedor
+            tabla.append(thead).append(tbody);
+            clasificacionContainer.append(tabla);
+        }
+    }
     // Configuración inicial
     manejarClickEnMenu();
     inicializarPagina();

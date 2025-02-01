@@ -2,9 +2,10 @@
     <img class="mainImage" src="resources/images/mainImage.png" alt="imagen de decoracion">
     <div class="selector-temporada"></div>
     <div class="titulo-temporada"></div>
-    <div class="titleDefault" id="barcelona">Barcelona</div>
+
+
+    <div class="titleDefault" id="barcelona" data-team="1">Barcelona</div>
         <article class="mainText">
-            
             <div class="equipos">
                 <div>
                     <img src="resources/images/logosEquipos/barcelona.png" alt="Logo Equipos">
@@ -12,14 +13,20 @@
                 </div>
                 <div>
                     <p>
-                        El equipo de balonmano Barcelona es el equipo representante de Cataluña en la Real Federación Española de Balonmano.
+                        Barcelona, El equipo de balonmano de los independentistas, que pertenece a la Real Federación Española de Balonmano.
+                        Es originario de la plaza de la Generalitate y fue fundado por Mohammed Abdullah, presidente de recursos humanos del
+                        gobierno catalan en 1987. Jose Antoniete es el presidente del equipo de futbol y como entrenador tienen a Paco Fiestas.
+                        El campo de este equipo es el Polideportivo MAP.En honor al famoso presidente de recursos humanos creador del club.
+                    </p>
+                    <p>
+                        Dirección del campo: Plaza de Jema-el-Fna , 32, 80322 Barcelona. 
                     </p>
                 </div>
             </div>
             <div class="jugador-lista jugador-lista-barcelona"></div> <!-- Contenedor para los jugadores -->
         </article>
 
-    <div class="titleDefault" id="madrid" >Madrid</div>
+    <div class="titleDefault" id="madrid" data-team="2">Madrid</div>
     <article class="mainText">
         <div class="equipos">
             <div><img src="resources/images/logosequipos/madrid.png" alt="Logo Equipos">
@@ -42,7 +49,7 @@
         </div>
     </article>
 
-    <div class="titleDefault" id="Cáceres" >Cáceres</div>
+    <div class="titleDefault" id="Cáceres" data-team="3">Cáceres</div>
     <article class="mainText">
         <div class="equipos">
             <div><img src="resources/images/logosequipos/cáceres.png" alt="Logo Equipos">
@@ -65,7 +72,7 @@
         </div>
     </article>
 
-    <div class="titleDefault" id="bilbao">Bilbao</div>
+    <div class="titleDefault" id="bilbao" data-team="4">Bilbao</div>
     <article class="mainText">
         <div class="equipos">
             <div><img src="resources/images/logosequipos/bilbao.png" alt="Logo Equipos">
@@ -88,7 +95,7 @@
         </div>
     </article>
 
-    <div class="titleDefault" id="sevilla" >Sevilla</div>
+    <div class="titleDefault" id="sevilla" data-team="5" >Sevilla</div>
     <article class="mainText">
         <div class="equipos">
             <div><img src="resources/images/logosequipos/sevilla.png" alt="Logo Equipos">
@@ -111,7 +118,7 @@
         </div>
     </article> 
 
-    <div class="titleDefault" id="murcia" >Murcia</div>
+    <div class="titleDefault" id="murcia" data-team="6">Murcia</div>
     <article class="mainText">
         <div class="equipos">
             <div><img src="resources/images/logosequipos/murcia.png" alt="Logo Equipos">
@@ -137,10 +144,22 @@
     </main>
 
     <script>
-
-
-$(document).ready(function() {
-    cargarXMLequipos(); // Llama a la función para cargar el XML
-});
-
-</script>
+        // Función para desplazarse suavemente a la sección del equipo
+        function desplazarAEquipo() {
+            // Obtener el hash de la URL (por ejemplo, "#barcelona")
+            const hash = window.location.hash;
+    
+            if (hash) {
+                // Encontrar la sección del equipo con el ID correspondiente
+                const seccionEquipo = document.querySelector(hash);
+    
+                if (seccionEquipo) {
+                    // Desplazarse suavemente a la sección
+                    seccionEquipo.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    
+        // Ejecutar la función cuando la página se cargue
+        window.addEventListener('load', desplazarAEquipo);
+    </script>
