@@ -12,7 +12,7 @@ $(document).ready(function () {
             dataType: "html",
             success: function (data) {
                 $(contenidoId).html(data);
-                cargarXMLequipos(); // Llamamos a cargarXML después de insertar el contenido
+                cargarXML(); // Llamamos a cargarXML después de insertar el contenido
             },
             error: function () {
                 console.error("Error al cargar contenido:", url);
@@ -24,6 +24,27 @@ $(document).ready(function () {
     // Manejador para los clics en el menú
     function manejarClickEnMenu() {
         $("nav li, .hg1 a, .hg2 a, .menu-desplegable a").on("click", function (event) {
+            event.preventDefault();
+            const url = $(this).data("url");
+
+            if (!url) {
+                console.warn("El elemento no tiene una URL asociada.");
+                return;
+            }
+
+            if ($(contenidoId).data("currentUrl") === url) {
+                console.log("Contenido ya cargado:", url);
+                return;
+            }
+
+            console.log("Cargando contenido desde:", url);
+            $(contenidoId).data("currentUrl", url);
+            cargarContenido(url);
+            inicializarCarrusel();
+        });
+    }
+    function manejarClickDeEquipos() {
+        $(".enlaceLocal, .enlaceVisitante").on("click", function (event) {
             event.preventDefault();
             const url = $(this).data("url");
 
@@ -56,7 +77,7 @@ $(document).ready(function () {
             console.warn("No se pudo cargar la página inicial.");
         }
     }
-    function cargarXMLequipos() {
+    function cargarXML() {
         $.ajax({
             url: "liga_balonmano.xml",
             method: "GET",
@@ -268,27 +289,6 @@ $(document).ready(function () {
                 jornadaContainer.append(partidoHTML);
             });
         }
-    
-        // Manejo del evento de clic en las imágenes de los equipos
-        $(document).on('click', '.enlaceLocal, .enlaceVisitante', function(e) {
-            e.preventDefault();  // Prevenimos el comportamiento por defecto (redirigir a otra página)
-    
-            var teamId = $(this).data('team');  // Obtenemos el id del equipo (como 'madrid' o 'barcelona')
-            
-            // Verificamos si el evento de clic se ha disparado
-            console.log("Clic en equipo:", teamId);
-    
-            // Primero, vamos a verificar si estamos en la página principal (index.html).
-            // Si estamos en la misma página, podemos simplemente agregar el hash.
-            if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
-                // Si ya estamos en index, solo redirigimos a la sección correspondiente.
-                window.location.hash = "#equipos";  // Esto hará que el navegador se desplace a la sección #equipos
-                $("#" + teamId).show();  // También mostramos el detalle del equipo que hemos clicado
-            } else {
-                // Si estamos en una página diferente, redirigimos a index.html y añadimos el hash para saltar a equipos.
-                window.location.href = "index.html#equipos";  // Redirige a index.html y pasa a la sección #equipos
-            }
-        });
     }
     function cargarClasificacion(idTemporada, xml) {
         // Obtener el contenedor de la tabla de clasificación
@@ -352,7 +352,8 @@ $(document).ready(function () {
     }
     // Configuración inicial
     manejarClickEnMenu();
+    manejarClickDeEquipos();
     inicializarPagina();
     inicializarCarrusel();
-    cargarXMLequipos(); // Llama a la función para cargar el XML
+    cargarXML(); // Llama a la función para cargar el XML
 });
