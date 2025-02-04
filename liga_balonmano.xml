@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <LigaBalonmano>
-    <Temporada id="Temporada_1" nombre="Temporada_2023-2024" fecha="2023-2024">
-        <Jornada>
+    <Temporada fecha="2023-2024" id="Temporada_Temporada 2023-2024" nombre="Temporada 2023-2024">
+        <Jornadas>
             <Jornada_1>
                 <Partido>Barcelona,Sevilla</Partido>
                 <Resultado>1,0</Resultado>
@@ -80,9 +80,9 @@
                 <Partido>Sevilla,Bilbao</Partido>
                 <Resultado>0,0</Resultado>
                 <Partido>Cáceres,Murcia</Partido>
-                <Resultado></Resultado>
+                <Resultado>0,0</Resultado>
             </Jornada_10>
-        </Jornada>
+        </Jornadas>
         <Plantilla>
             <Jugador>Paco,Rabales,66778899H,,Mediocampista,Barcelona,images/jugadores/Barcelona/PacoRabales.1.png</Jugador>
             <Jugador>Mohammed,Arduino,77889900I,26,Defensa,Barcelona,images/jugadores/Barcelona/MohammedArduino.1.png</Jugador>
@@ -153,14 +153,14 @@
             <Equipo>Club,Pts,PJ,PG,PE,PP,GF,GC,DG</Equipo>
             <Equipo>Barcelona,25,10,5,5,0,5,0,5</Equipo>
             <Equipo>Sevilla,20,10,1,8,1,1,1,0</Equipo>
-            <Equipo>Murcia,19,10,0,9,1,0,1,-1</Equipo>
             <Equipo>Bilbao,19,10,1,7,2,1,2,-1</Equipo>
             <Equipo>Cáceres,19,10,0,9,1,0,1,-1</Equipo>
+            <Equipo>Murcia,19,10,0,9,1,0,1,-1</Equipo>
             <Equipo>Madrid,18,10,0,8,2,0,2,-2</Equipo>
         </Clasificacion>
     </Temporada>
-    <Temporada id="Temporada_2" nombre="Temporada_2024-2025" fecha="2024-2025">
-        <Jornada>
+    <Temporada fecha="2024-2025" id="Temporada_Temporada 2024-2025" nombre="Temporada 2024-2025">
+        <Jornadas>
             <Jornada_1>
                 <Partido>Barcelona,Cáceres</Partido>
                 <Resultado>0,0</Resultado>
@@ -241,7 +241,7 @@
                 <Partido>Cáceres,Murcia</Partido>
                 <Resultado>0,0</Resultado>
             </Jornada_10>
-        </Jornada>
+        </Jornadas>
         <Plantilla>
             <Jugador>Paco,Rabales,66778899H,,Mediocampista,Barcelona,images/jugadores/Barcelona/PacoRabales.2.png</Jugador>
             <Jugador>Mohammed,Arduino,77889900I,26,Defensa,Barcelona,images/jugadores/Barcelona/MohammedArduino.2.png</Jugador>
@@ -313,13 +313,13 @@
             <Equipo>Bilbao,21,10,1,9,0,10,0,10</Equipo>
             <Equipo>Barcelona,20,10,0,10,0,0,0,0</Equipo>
             <Equipo>Sevilla,20,10,0,10,0,0,0,0</Equipo>
-            <Equipo>Murcia,20,10,0,10,0,0,0,0</Equipo>
             <Equipo>Cáceres,20,10,0,10,0,0,0,0</Equipo>
+            <Equipo>Murcia,20,10,0,10,0,0,0,0</Equipo>
             <Equipo>Madrid,19,10,0,9,1,0,10,-10</Equipo>
         </Clasificacion>
     </Temporada>
-    <Temporada id="Temporada_3" nombre="Temporada_2025-2026" fecha="2025-2026">
-        <Jornada>
+    <Temporada fecha="2025-2026" id="Temporada_Temporada 2025-2026" nombre="Temporada 2025-2026">
+        <Jornadas>
             <Jornada_1>
                 <Partido>Barcelona,Sevilla</Partido>
                 <Resultado>0,0</Resultado>
@@ -400,7 +400,7 @@
                 <Partido>Cáceres,Murcia</Partido>
                 <Resultado>0,1</Resultado>
             </Jornada_10>
-        </Jornada>
+        </Jornadas>
         <Plantilla>
             <Jugador>Paco,Rabales,66778899H,,Mediocampista,Barcelona,images/jugadores/Barcelona/PacoRabales.3.png</Jugador>
             <Jugador>Mohammed,Arduino,77889900I,26,Defensa,Barcelona,images/jugadores/Barcelona/MohammedArduino.3.png</Jugador>
