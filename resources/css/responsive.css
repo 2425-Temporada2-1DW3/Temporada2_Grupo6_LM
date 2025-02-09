@@ -28,6 +28,16 @@
         font-size: 0.9em;
        }
   }
+  .calendar{
+    font-size: medium;
+    grid-template-columns: 15% 20% 10% 30% 10% 5% 5%
+  }
+  .mainText form{
+    max-width: 600px;
+  }
+  .mainText iframe{
+    max-width: 600px;
+  }
   @media only screen and (max-width: 800px) { /* Cuando La pantalla es de 0px a 972px */
 /*Header y footer */
 
@@ -57,6 +67,49 @@
        nav ul li {
         font-size: small;
       }
+      .tabla table{
+        font-size: small;
+      }
+      .boton-temporada{
+        font-size:small;
+        margin-bottom: 0.5em;
+      }
+      .selector-temporada{
+        flex-direction:column
+      }
+      .temporada-seleccionada{
+        font-size: small;
+      }
+      #cuerpoClasificacion{
+        border: 1px solid white ;
+      }
+      /*CALENDARIO*/
+      .calendar{
+        font-size: small;
+        grid-template-columns: 15% 20% 10% 30% 10% 5%
+      }
+      .calendarHourText{
+        display: none;
+      }
+          /*Equipos*/
+    .jugador p{
+      font-size: small;
+    }
+    .descripcionEquipos{
+      font-size: small ;
+    }
+    .titleDefault{
+      font-size: x-large;
+    }
+    .mainText form{
+      max-width: 400px;
+    }
+    .mainText iframe{
+      max-width: 400px;
+    }
+    .redesText{
+      font-size:smaller
+    }
 }
   @media only screen and (max-width: 420px) { /* Cuando La pantalla es de 0px a 972px */
    
@@ -83,5 +136,56 @@
      }
      nav ul li {
       font-size: xx-small;
+    }
+
+    /*CLASIFICACION */
+    .tabla table{
+      font-size: xx-small;
+    }
+    .boton-temporada{
+      font-size:xx-small;
+      margin-bottom: 0.5em;
+    }
+    .selector-temporada{
+      flex-direction:column
+    }
+    .temporada-seleccionada{
+      font-size: xx-small;
+    }
+    #cuerpoClasificacion{
+      border: 1px solid white ;
+    }
+
+    /*CALENDARIO*/
+    .calendar{
+      font-size: xx-small;
+      grid-template-columns: 15% 20% 10% 30% 10% 5%
+    }
+
+    /*Equipos*/
+    .jugador p{
+      font-size: smaller;
+    }
+    .descripcionEquipos{
+      font-size: xx-small ;
+    }
+
+    /*NOTICIAS*/
+
+    .titleDefault{
+      font-size: medium;
+    }
+    /*CONTACTO*/
+    .info{
+      font-size: small;
+    }
+    .mainText form{
+      max-width: 300px;
+    }
+    .mainText iframe{
+      max-width: 300px;
+    }
+    .redesText{
+      font-size:small
     }
 }

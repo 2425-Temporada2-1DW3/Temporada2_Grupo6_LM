@@ -11,8 +11,9 @@ $(document).ready(function () {
             method: "GET",
             dataType: "html",
             success: function (data) {
+
                 $(contenidoId).html(data);
-                cargarXMLequipos(); // Llamamos a cargarXML después de insertar el contenido
+                cargarXML(); // Llamamos a cargarXML después de insertar el contenido
             },
             error: function () {
                 console.error("Error al cargar contenido:", url);
@@ -23,26 +24,48 @@ $(document).ready(function () {
 
     // Manejador para los clics en el menú
     function manejarClickEnMenu() {
-        $("nav li, .hg1 a, .hg2 a, .menu-desplegable a").on("click", function (event) {
-            event.preventDefault();
-            const url = $(this).data("url");
-
+        $("nav li, .hg1 a, .hg2 a, .menu-desplegable a, a.enlaceLocal, a.enlaceVisitante, a.enlaceEquipo").on("click", function (event) {
+            event.preventDefault();  // Prevenir el comportamiento predeterminado del enlace
+    
+            const url = $(this).data("url");  // Obtener la URL del atributo data-url
+    
             if (!url) {
                 console.warn("El elemento no tiene una URL asociada.");
                 return;
             }
-
-            if ($(contenidoId).data("currentUrl") === url) {
-                console.log("Contenido ya cargado:", url);
-                return;
-            }
-
+    
+            // Forzar la recarga de la sección aunque ya esté cargada
+            $(contenidoId).data("currentUrl", ""); // Limpiar la URL actual para forzar recarga
             console.log("Cargando contenido desde:", url);
-            $(contenidoId).data("currentUrl", url);
-            cargarContenido(url);
-            inicializarCarrusel();
+            $(contenidoId).data("currentUrl", url); // Actualizar la URL para mantener el estado
+    
+            cargarContenido(url);  // Llamar a la función para cargar el contenido
+            inicializarCarrusel();  // Si es necesario, inicializa el carrusel u otros componentes
         });
     }
+// Manejador para los clics de los equipos
+function manejarClickDeEquipos() {
+    $(document).on("click", "a.enlaceLocal, a.enlaceVisitante, a.enlaceEquipo", function (event) {
+        event.preventDefault();  // Prevenir la acción por defecto del enlace
+        
+        // Obtener la URL y el equipo del atributo data-url y data-team
+        const urlBase = $(this).data("url");  // Esto es "equipos.html"
+        const equipo = $(this).data("team");  // Esto es el nombre del equipo seleccionado
+        
+        // Verificar si la URL y el equipo son válidos
+        if (!urlBase || !equipo) {
+            console.warn("El enlace no tiene URL o equipo asociado.");
+            return;
+        }
+
+        // Formateamos la URL correctamente para la carga AJAX
+        const equipoUrl = `${urlBase}?team=${encodeURIComponent(equipo)}`;
+
+        console.log("Cargando contenido dinámico para el equipo:", equipo);
+        cargarContenido(equipoUrl);
+    });
+}
+
 
     // Inicialización de la página
     function inicializarPagina() {
@@ -56,7 +79,8 @@ $(document).ready(function () {
             console.warn("No se pudo cargar la página inicial.");
         }
     }
-    function cargarXMLequipos() {
+
+    function cargarXML() {
         $.ajax({
             url: "liga_balonmano.xml",
             method: "GET",
@@ -252,11 +276,11 @@ $(document).ready(function () {
                     <div class="calendar">
                         <div class="calendarDateText">${fechas[index]} ${meses[mesActual]}</div>
                         <div class="polideportivo${index + 1} polideportivo">${polideportivo}</div>
-                        <a class="enlaceLocal" href="javascript:void(0);" data-team="${nombreLocal.toLowerCase()}">
+                        <a class="enlaceLocal" data-url="equipos.html" href="javascript:void(0);" data-team="${nombreLocal.toLowerCase()}">
                             <img class="imagenLocal" src="resources/images/logosEquipos/${nombreLocal.toLowerCase()}.png" alt="Logo ${nombreLocal}">
                         </a>
                         <div class="calendarVersusText">${nombreLocal} vs ${nombreVisitante}</div>
-                        <a class="enlaceVisitante" href="javascript:void(0);" data-team="${nombreVisitante.toLowerCase()}">
+                        <a class="enlaceVisitante" data-url="equipos.html" href="javascript:void(0);" data-team="${nombreVisitante.toLowerCase()}">
                             <img class="imagenVisitante" src="resources/images/logosEquipos/${nombreVisitante.toLowerCase()}.png" alt="Logo ${nombreVisitante}">
                         </a>            
                         <div class="calendarHourText">${horas[index]}</div>
@@ -268,27 +292,6 @@ $(document).ready(function () {
                 jornadaContainer.append(partidoHTML);
             });
         }
-    
-        // Manejo del evento de clic en las imágenes de los equipos
-        $(document).on('click', '.enlaceLocal, .enlaceVisitante', function(e) {
-            e.preventDefault();  // Prevenimos el comportamiento por defecto (redirigir a otra página)
-    
-            var teamId = $(this).data('team');  // Obtenemos el id del equipo (como 'madrid' o 'barcelona')
-            
-            // Verificamos si el evento de clic se ha disparado
-            console.log("Clic en equipo:", teamId);
-    
-            // Primero, vamos a verificar si estamos en la página principal (index.html).
-            // Si estamos en la misma página, podemos simplemente agregar el hash.
-            if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
-                // Si ya estamos en index, solo redirigimos a la sección correspondiente.
-                window.location.hash = "#equipos";  // Esto hará que el navegador se desplace a la sección #equipos
-                $("#" + teamId).show();  // También mostramos el detalle del equipo que hemos clicado
-            } else {
-                // Si estamos en una página diferente, redirigimos a index.html y añadimos el hash para saltar a equipos.
-                window.location.href = "index.html#equipos";  // Redirige a index.html y pasa a la sección #equipos
-            }
-        });
     }
     function cargarClasificacion(idTemporada, xml) {
         // Obtener el contenedor de la tabla de clasificación
@@ -316,43 +319,58 @@ $(document).ready(function () {
             let tbody = $("<tbody>");
     
             // Leer los equipos de la clasificación de la temporada
-            temporada.find("Clasificacion > Equipo").each(function(index) {
+            temporada.find("Clasificacion > Equipo").each(function (index) {
                 if (index === 0) return; // Saltar la primera fila (cabecera en el XML)
-    
+            
                 let datos = $(this).text().split(",");
                 let fila = $("<tr>");
-    
+            
                 // Asumimos que el primer dato es el nombre del equipo
-                let nombreEquipo = datos[0].toLowerCase();  // Convertimos el nombre a minúsculas
-    
-                // Crear una celda para el escudo del equipo
+                let nombreEquipo = datos[0].toLowerCase().trim(); // Convertimos el nombre a minúsculas y eliminamos espacios extra
+            
                 let celdaEscudo = $("<td>");
-                let imgEscudo = $("<img>").attr("src", `resources/images/logosEquipos/${nombreEquipo}.png`).addClass("escudo-equipo");
-                celdaEscudo.append(imgEscudo);
-    
+                let enlaceEscudo = $("<a>")
+                .attr("href", "javascript:void(0);")  // ✅ Evita recargar la página
+                .attr("data-url", "equipos.html")    // URL de destino
+                .attr("data-team", nombreEquipo.toLowerCase()) // El nombre del equipo en minúsculas
+                .addClass("enlaceEquipo");  // Añadir clase
+            
+            // Crear la imagen del escudo del equipo
+            let imgEscudo = $("<img>")
+                .attr("src", `resources/images/logosEquipos/${nombreEquipo.toLowerCase()}.png`) // Imagen del equipo
+                .addClass("escudo-equipo"); // Añadir clase
+            
+                
+                enlaceEscudo.append(imgEscudo);
+                celdaEscudo.append(enlaceEscudo);
+                
+            
                 // Crear una celda para el nombre del equipo
                 let celdaNombreEquipo = $("<td>").text(datos[0]);
-    
+            
                 // Añadir las celdas para el nombre y el escudo
                 fila.append(celdaEscudo);
                 fila.append(celdaNombreEquipo);
-    
+            
                 // Añadir las celdas de los datos restantes
                 for (let i = 1; i < datos.length; i++) {
                     fila.append(`<td>${datos[i]}</td>`);
                 }
-    
+            
                 tbody.append(fila);
             });
-    
+            
             // Añadir la tabla al contenedor
             tabla.append(thead).append(tbody);
             clasificacionContainer.append(tabla);
         }
-    }
+    }            
     // Configuración inicial
-    manejarClickEnMenu();
+
     inicializarPagina();
     inicializarCarrusel();
-    cargarXMLequipos(); // Llama a la función para cargar el XML
+    cargarXML();
+    manejarClickDeEquipos();
+    manejarClickEnMenu();
+   
 });

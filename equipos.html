@@ -11,7 +11,7 @@
                     <img src="resources/images/logosEquipos/barcelona.png" alt="Logo Equipos">
                     <button class="toggle-jugadores" data-target=".jugador-lista-barcelona">Jugadores</button>
                 </div>
-                <div>
+                <div class="descripcionEquipos">
                     <p>
                         Barcelona, El equipo de balonmano de los independentistas, que pertenece a la Real Federación Española de Balonmano.
                         Es originario de la plaza de la Generalitate y fue fundado por Mohammed Abdullah, presidente de recursos humanos del
@@ -32,7 +32,7 @@
             <div><img src="resources/images/logosequipos/madrid.png" alt="Logo Equipos">
                 <button class="toggle-jugadores" data-target=".jugador-lista-madrid">Jugadores</button>
             </div>
-            <div>
+            <div class="descripcionEquipos">
                 <p>
                     Madrid, el equipo de balonmano de la capital española, que pertenece a la Real Federación Española 
                     de Balonmano. Es originario del barrio madrileño de Vallecas y fue fundado por Myki Rodríguez en 1967. 
@@ -55,7 +55,7 @@
             <div><img src="resources/images/logosequipos/cáceres.png" alt="Logo Equipos">
                 <button class="toggle-jugadores" data-target=".jugador-lista-cáceres">Jugadores</button>
             </div>
-            <div>
+            <div class="descripcionEquipos">
                 <p>
                     El equipo representante de Extremadura en la Real Federación Española de Balonmano es el Cáceres,
                      que lleva desde 1982 practicando este deporte como equipo oficial. Fue fundado por Jacinto Galiciano 
@@ -78,7 +78,7 @@
             <div><img src="resources/images/logosequipos/bilbao.png" alt="Logo Equipos">
                 <button class="toggle-jugadores" data-target=".jugador-lista-bilbao">Jugadores</button>
             </div>
-            <div>
+            <div class="descripcionEquipos">
                 <p>
                     El equipo vasco de Bilbao es el más longevo de la Real Federación Española de Balonmano,
                      fundado en 1953 por Karlos Ardillano. El presidente del equipo bilbaíno es Fito Cabritos
@@ -101,7 +101,7 @@
             <div><img src="resources/images/logosequipos/sevilla.png" alt="Logo Equipos">
                 <button class="toggle-jugadores" data-target=".jugador-lista-sevilla">Jugadores</button>
             </div>
-            <div>
+            <div class="descripcionEquipos">
                 <p>
                     Sevilla, el equipo andaluz de la Real Federación Española de Balonmano. Fue fundado en 1984 
                     por Jacobo González. El presidente del equipo sevillano es Joaquín Sánchez, y el entrenador es
@@ -124,7 +124,7 @@
             <div><img src="resources/images/logosequipos/murcia.png" alt="Logo Equipos">
                 <button class="toggle-jugadores" data-target=".jugador-lista-murcia">Jugadores</button>
             </div>
-            <div>
+            <div class="descripcionEquipos">
                 <p>
                     El equipo Murcia, fue uno de los últimos de la Real Federación Española de Balonmano en incorporarse
                      al mundo del deporte, ya que fue fundado en 1987 por Paco Fiestas. El actual presidente es Anastasio Jiménez, 
@@ -142,24 +142,3 @@
     </article>
 </article>
     </main>
-
-    <script>
-        // Función para desplazarse suavemente a la sección del equipo
-        function desplazarAEquipo() {
-            // Obtener el hash de la URL (por ejemplo, "#barcelona")
-            const hash = window.location.hash;
-    
-            if (hash) {
-                // Encontrar la sección del equipo con el ID correspondiente
-                const seccionEquipo = document.querySelector(hash);
-    
-                if (seccionEquipo) {
-                    // Desplazarse suavemente a la sección
-                    seccionEquipo.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        }
-    
-        // Ejecutar la función cuando la página se cargue
-        window.addEventListener('load', desplazarAEquipo);
-    </script>
